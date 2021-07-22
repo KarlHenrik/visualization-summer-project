@@ -12,4 +12,4 @@ A repository for visualizations of various scientific topics with the purpose of
 
 ## The files
 
-`config.yml`, `_toc.yml` and `build_docs.sh` are all used to modify and build the website.
+`config.yml`, `_toc.yml`, `intro.md` and `build_docs.sh` are all used to modify and build the website.
