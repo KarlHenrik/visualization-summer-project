@@ -1,6 +1,6 @@
 # Table of content
 
-- file: intro
+- file: notebooks/intro
   sections:
     - file: notebooks/Orbit
     - file: notebooks/Vectors
