@@ -1,7 +1,18 @@
 # Table of content
 
 - file: intro
-  sections:
-    - file: notebooks/Orbit
-    - file: notebooks/Vectors
-    - file: notebooks/Starfield
+- part: Material
+  chapters:
+    - file: notebooks/Rockets/Escape
+#- part: Rocket Physics
+  #chapters:
+    #- file: notebooks/Rockets/Escape
+    #- file: notebooks/Rockets/GravityLoss
+    #- file: notebooks/Rockets/Oberth
+    #- file: notebooks/Rockets/Slingshot
+- part: Demos
+  chapters:
+    - file: notebooks/Demos/Orbit
+    - file: notebooks/Demos/Vectors
+    - file: notebooks/Demos/Starfield
+
