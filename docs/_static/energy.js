@@ -57,11 +57,10 @@ let energy = function(p) {
     };
 
     function potentialEnergy() {
-        let h0 = 20;
-        let mp = Math.max(mePos[0], h0);
-        let R = Math.abs(mp - earthPos[0]);
-        R = Math.max(R, h0);
-        return 12000 / h0 - 12000 / R;
+        let dx = mePos[0] - earthPos[0];
+        let surface = 20
+        let R = Math.max(dx, surface);
+        return 12000 / surface - 12000 / R;
     };
 
 };
