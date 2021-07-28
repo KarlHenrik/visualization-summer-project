@@ -4,7 +4,7 @@ function setup() {
         orbitsketch: orbit,
         starfield: starfield,
         vectors: vectors,
-        vectors2: orbit,
+        energy_canvas: energy,
     };
 
     var myEle;
