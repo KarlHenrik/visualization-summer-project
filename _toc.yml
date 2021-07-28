@@ -1,18 +1,22 @@
-# Table of content
-
-- file: intro
-- part: Material
-  chapters:
+# Table of contents
+format: jb-book
+root: intro
+parts:
+  - caption: Material
+    chapters:
     - file: notebooks/Rockets/Escape
-#- part: Rocket Physics
-  #chapters:
+  - caption: Demos
+    chapters:
+    - file: notebooks/Demos/Orbit
+    - file: notebooks/Demos/Vectors
+    - file: notebooks/Demos/Starfield
+  - caption: Extra
+    chapters:
+    - file: notebooks/HowTo
+  #- part: Rocket Physics
+    #chapters:
     #- file: notebooks/Rockets/Escape
     #- file: notebooks/Rockets/GravityLoss
     #- file: notebooks/Rockets/Oberth
     #- file: notebooks/Rockets/Slingshot
-- part: Demos
-  chapters:
-    - file: notebooks/Demos/Orbit
-    - file: notebooks/Demos/Vectors
-    - file: notebooks/Demos/Starfield
 
