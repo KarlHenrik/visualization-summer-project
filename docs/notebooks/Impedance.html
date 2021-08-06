@@ -304,26 +304,41 @@ As we can see, it is a purely material property, which simply describes how a so
 <p>All waves can get reflected when meeting a boundary, and different things affect how the wave behaves once it has encountered the boundary. For now, we are interested in seeing how the difference between impedance values affect the reflected and transmitted waves.</p>
 <p>We will not focus too much on the derivation of the following expressions, however, especially interested can have a look at this .pdf file [*] as well as the following lectures from UiO’s class in Waves and Oscillations [**].</p>
 <p>In order to get a better understanding of impedance, we can define two boundaries: <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. We will use these to define the impedances of the first boundary, where our wave will be coming from (<span class="math notranslate nohighlight">\(Z_a\)</span>), and <span class="math notranslate nohighlight">\(Z_b\)</span> as the impedance of the second boundary, where our wave is travelling to. We know that our wave has an amplitude that it is travelling with - let us denote it as <span class="math notranslate nohighlight">\(A_i\)</span> (for incoming amplitude). We also know that our wave will either get reflected or transmitted - and we can denote those amplitudes as <span class="math notranslate nohighlight">\(A_r\)</span> and <span class="math notranslate nohighlight">\(A_t\)</span> respectively. The reason why we are interested in defining these amplitudes is because amplitudes are directly related to the energy transported by the wave (recall that intensity is proportional with square of amplitude, <span class="math notranslate nohighlight">\(I \propto A^2 \)</span>, and intensity is simply energy per unit area per unit time). Using this information, we can define</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
 R = \frac{A_r}{A_i}
-\end{align}</p>
+\end{align}
+\]</div>
 <p>which we call the <em>reflection coefficient</em> <span class="math notranslate nohighlight">\(R\)</span>, that gives us the fraction of the wave that gets reflected. Furthermore, it is also given as</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
 R = \frac{Z_{a} - Z_{b}}{Z_{a} + Z_{b}}
-\end{align}</p>
+\end{align}
+\]</div>
 <p>which shows us how the reflection coefficient <span class="math notranslate nohighlight">\(R\)</span> is related to the impedances of the boundaries that our wave is travelling through.</p>
 <p>We can extend this idea to find the <em>transmission coefficient</em> <span class="math notranslate nohighlight">\(T\)</span>, which gives us the fraction of the wave that gets transmitted:</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
 T = \frac{A_{t}}{A_{i}} = \frac{2 Z_{a}}{Z_{a} + Z_{b}}
-\end{align}</p>
+\end{align}
+\]</div>
 <p>In order to understand how we came about these derivations, we need to consider conservation of energy and apply it to amplitudes of the wave (incoming, reflected and transmitted). To make this easier to understand, we can represent the same coefficients using electromagnetic (EM) waves, where we denote the amplitude of the incoming EM wave as <span class="math notranslate nohighlight">\(E_i\)</span>, amplitude of the reflected wave as <span class="math notranslate nohighlight">\(E_r\)</span> and transmitted as <span class="math notranslate nohighlight">\(E_t\)</span>. We can also use the well known refractive indices of different media denoted as <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> that are analagous to <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. Thus, we arrive at very similar equations relating amplitudes of the incoming, reflected and transmitted EM wave and refractive indices of media that it propagates through:</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
 r = \frac{E_r}{E_i} = \frac{n_1 - n_2}{n_1 + n_2}
-\end{align}</p>
+\end{align}
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(r\)</span> is the reflection coefficient for EM waves (analagous to <span class="math notranslate nohighlight">\(R\)</span> for impedance) and</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
 t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
-\end{align}</p>
+\end{align}
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(t\)</span> is the transmission coefficient analagous to <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>Thus, we are able to connect the concept of impedance to concept of refractive index and how waves (regardless of their type) behave when they propagate from one media to another.</p>
 <p>Now that we have mathematical expressions ready, we can try to visualise exactly how impedance affects the behaviour of a wave.</p>
