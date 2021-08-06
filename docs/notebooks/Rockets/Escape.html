@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Velocity &#8212; Visualizations and Exercises</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/energy.js"></script>
+    <script src="../../_static/initialize.js"></script>
+    <script src="../../_static/orbit.js"></script>
+    <script src="../../_static/p5.min.js"></script>
+    <script src="../../_static/starfield.js"></script>
+    <script src="../../_static/vectors.js"></script>
+    <script src="../../_static/.ipynb_checkpoints/vectors-checkpoint.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Orbit" href="../Demos/Orbit.html" />
+    <link rel="prev" title="Introduction" href="../../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualizations and Exercises</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Escape Velocity
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Demos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Demos/Orbit.html">
+   Orbit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Demos/Vectors.html">
+   Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Demos/Starfield.html">
+   Starfield
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Extra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../HowTo.html">
+   How to make this website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Rockets/Escape.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leaving-earth">
+   Leaving Earth
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leaving-the-solar-system">
+   Leaving the Solar System
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="escape-velocity">
+<h1>Escape Velocity<a class="headerlink" href="#escape-velocity" title="Permalink to this headline">¶</a></h1>
+<p>Say you wanted to get to Proxima Centauri, the star closest to our own.</p>
+<p><img alt="Proxima Centauri" src="../../_images/proxima.jpg" /></p>
+<p>It’s 4.2465 light-years away, or about 40,208,000,000,000 km. That’s pretty far, but you said nothing about getting there <em>soon</em>, so it shouldn’t be that hard.</p>
+<div class="section" id="leaving-earth">
+<h2>Leaving Earth<a class="headerlink" href="#leaving-earth" title="Permalink to this headline">¶</a></h2>
+<p>The first problem you’d face is leaving the Earth. We will ignore air resistance, and how to gain speed, and simply assume you start fully sped up. How much speed would you need to leave the Earth for good?</p>
+<p>The real problem is the Earths gravity. It pulls you towards it with a force <span class="math notranslate nohighlight">\(F\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+F = \frac{G m_1 m_2}{r^2}
+\end{aligned}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m_1\)</span> is the mass of the Earth, <span class="math notranslate nohighlight">\(m_2\)</span> is your mass, and <span class="math notranslate nohighlight">\(r\)</span> is the distance from you to the center of the Earth.</p>
+<p>The first key insight here is that as you go further away from the Earth, the force of gravity approaches zero. This means that you don’t need to fight gravity forever to escape it, you only need to get far enough away with a little speed left over, that way gravity will effectively dissipate. What goes up mustn’t come down.</p>
+<p>The second key insight is that when you’re only being affected by gravity, you’re either speeding up and moving down, or slowing down and moving up. It just so happens that these two behaviours are in perfect balance, the kinetic energy you lose when slowing down while moving up is gained as gravitational potential energy. And when you move closer to the Earth and speed up, your gravitational potential energy is being turned back into kinetic energy.</p>
+<p>Kinetic energy is the energy associated the the movement of an object with mass <span class="math notranslate nohighlight">\(m\)</span> and velocity <span class="math notranslate nohighlight">\(v\)</span>, and is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+E_K = \frac{1}{2}mv^2
+\end{aligned}
+\]</div>
+<p>The interactive window below shows the value of kinetic energy and gravitational potential energy when moving in a gravitational field.</p>
+<article id="energy_canvas"></article><p>The interactive window above showed how with enough initial kinetic energy you can escape gravity, but just how much do you need? We can find this by calculating the amount of <strong>work</strong> gravity does from your starting distance <span class="math notranslate nohighlight">\(r_0\)</span> into infinity. Energy that is “taken” or “given” by a force is given by the amount of work. Work is equal to force times distance, but since the force of gravity changes with distance, we need to integrate the force over the distance instead:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+W_G = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr
+\end{aligned}
+\]</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> How does your kinetic energy change with distance when you’re very far away from Earth? What about when you’re very close?</p>
+<p><strong>b)</strong> Does the total energy change at all? Why?</p>
+<p><strong>c)</strong> Calculate the integral to find the initial kinetic energy you need to escape the Earths gravity.</p>
+<p><strong>d)</strong> Find the initial velocity you need to escape the Earths gravity.</p>
+<p><strong>e)</strong> If you started falling towards the Earth from infinitely far away (with no velocity), how fast would you be going when you hit the ground? What if you started falling from 1000 km away?</p>
+<p><strong>f)</strong> Below is an interavtive window that lets you choose your starting direction when leaving Earth. What initial velocity would you need to escape the Earths gravity if you started at a 45<span class="math notranslate nohighlight">\(^\circ\)</span> angle?</p>
+<p>Useful values: <span class="math notranslate nohighlight">\(G = 6.674*10^{-11}m^3kg^{–1}s^{–2}\)</span>, <span class="math notranslate nohighlight">\(m_1 = 5.972*10^{24}kg\)</span>, <span class="math notranslate nohighlight">\(r_0 = 6.371*10^6 m\)</span> (the radius of the Earth).</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+E_K = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr = \left[-\frac{G m_1 m_2}{r}\right]_{r_0}^{\infty} = 0 + \frac{G m_1 m_2}{r_0} = \frac{G m_1 m_2}{r_0}
+\end{aligned}
+\]</div>
+<p>This is how much kinetic energy gravity can “take”, and if you start with more kinetic energy than this, gravity will never be able to stop you. Proxima Centauri better get ready!*</p>
+<p>TODO</p>
+</div>
+<p>————-[Interactive where you choose the starting angle and see how you fly. The point is that starting angle doesen’t matter, as long as you’re moving away from the Earth with enough kinetic energy. You can also choose to go slow to enter orbit or crash into the Earth, depending on how steep the angle is.]———-</p>
+<p><img alt="Angle Interactive Placeholder" src="../../_images/angle.jpg" /></p>
+</div>
+</div>
+<div class="section" id="leaving-the-solar-system">
+<h2>Leaving the Solar System<a class="headerlink" href="#leaving-the-solar-system" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Rockets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="../Demos/Orbit.html" title="next page">Orbit</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
