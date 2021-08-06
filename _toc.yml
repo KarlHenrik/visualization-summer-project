@@ -4,7 +4,7 @@ root: intro
 parts:
   - caption: Material
     chapters:
-    - file: notebooks/Rockets/Escape
+    - file: notebooks/EscapeVelocity
   - caption: Demos
     chapters:
     - file: notebooks/Demos/Orbit
