@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impedance &#8212; Visualizations and Exercises</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/energy.js"></script>
+    <script src="../_static/initialize.js"></script>
+    <script src="../_static/orbit.js"></script>
+    <script src="../_static/p5.min.js"></script>
+    <script src="../_static/starfield.js"></script>
+    <script src="../_static/vectors.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Orbit" href="Demos/Orbit.html" />
+    <link rel="prev" title="Escape Velocity" href="EscapeVelocity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualizations and Exercises</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="EscapeVelocity.html">
+   Escape Velocity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Impedance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Demos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Orbit.html">
+   Orbit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Vectors.html">
+   Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Starfield.html">
+   Starfield
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Extra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HowTo.html">
+   How to make this website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Impedance.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-impedance">
+   What is impedance?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explaining-characteristic-acoustic-impedance">
+     Explaining characteristic acoustic impedance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-characteristic-acoustic-impedance-to-behaviour-of-waves">
+     Applying characteristic acoustic impedance to behaviour of waves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reflection-and-transmission-of-waves">
+     Reflection and transmission of waves
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#this-is-where-my-animation-is-going-to-be">
+     this is where my animation is going to be
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impedance-in-ultrasound">
+   Impedance in ultrasound
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-and-further-readings">
+   References and further readings
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="impedance">
+<h1>Impedance<a class="headerlink" href="#impedance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-objectives">
+<h2>Learning objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Explain what acoustic impedance is in terms of density and speed of medium</p></li>
+<li><p>Explore reflection and tranmission coefficients physically and mathematically (using visualisation and the slider); what they do to a travelling wave; thinking about energies of waves in terms of reflection and transmission</p></li>
+<li><p>Compare impedance and refractive index (drawing a parallel between these two): not too important but good to know about it for transfer or knowledge</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-impedance">
+<h2>What is impedance?<a class="headerlink" href="#what-is-impedance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>have different types of impedance: acoustic and electrical (explain the difference)</p></li>
+<li><p>have different types of acoustic impedance: specific and non-specific (just acoustic) (explain the difference)</p></li>
+<li><p>acoustic impedance has analogies with electrical impedance</p></li>
+</ul>
+<div class="section" id="explaining-characteristic-acoustic-impedance">
+<h3>Explaining characteristic acoustic impedance<a class="headerlink" href="#explaining-characteristic-acoustic-impedance" title="Permalink to this headline">¶</a></h3>
+<p>The acoustic impedance (Z) of a medium is dependent on the density of medium <span class="math notranslate nohighlight">\(\left(\rho \left[\frac{kg}{m^3}\right]\right)\)</span> and the speed of sound through this medium <span class="math notranslate nohighlight">\(\left(c \left[\frac{m}{s}\right]\right)\)</span> , given as
+\begin{align}
+Z = \rho c
+\end{align}
+As we can see, it is a purely material property, which simply describes how a sound wave behaves when passing through a specific medium.</p>
+<p>When waves are propagating through media with difference impedance, a fraction of those waves is either transmitted or reflected. The <em>difference</em> in impedance is what helps us identify how much of the wave is trasmitted or reflected.</p>
+</div>
+<div class="section" id="applying-characteristic-acoustic-impedance-to-behaviour-of-waves">
+<h3>Applying characteristic acoustic impedance to behaviour of waves<a class="headerlink" href="#applying-characteristic-acoustic-impedance-to-behaviour-of-waves" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>understanding concept visually/intuitively first</p></li>
+<li><p>applying more maths and introducing reflection and transmission coefficient</p></li>
+</ul>
+</div>
+<div class="section" id="reflection-and-transmission-of-waves">
+<h3>Reflection and transmission of waves<a class="headerlink" href="#reflection-and-transmission-of-waves" title="Permalink to this headline">¶</a></h3>
+<p>All waves can get reflected when meeting a boundary, and different things affect how the wave behaves once it has encountered the boundary. For now, we are interested in seeing how the difference between impedance values affect the reflected and transmitted waves.</p>
+<p>We will not focus too much on the derivation of the following expressions, however, especially interested can have a look at this .pdf file [*] as well as the following lectures from UiO’s class in Waves and Oscillations [**].</p>
+<p>In order to get a better understanding of impedance, we can define two boundaries: <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. We will use these to define the impedances of the first boundary, where our wave will be coming from (<span class="math notranslate nohighlight">\(Z_a\)</span>), and <span class="math notranslate nohighlight">\(Z_b\)</span> as the impedance of the second boundary, where our wave is travelling to. We know that our wave has an amplitude that it is travelling with - let us denote it as <span class="math notranslate nohighlight">\(A_i\)</span> (for incoming amplitude). We also know that our wave will either get reflected or transmitted - and we can denote those amplitudes as <span class="math notranslate nohighlight">\(A_r\)</span> and <span class="math notranslate nohighlight">\(A_t\)</span> respectively. The reason why we are interested in defining these amplitudes is because amplitudes are directly related to the energy transported by the wave (recall that intensity is proportional with square of amplitude, <span class="math notranslate nohighlight">\(I \propto A^2 \)</span>, and intensity is simply energy per unit area per unit time). Using this information, we can define</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+R = \frac{A_r}{A_i}
+\end{align}
+\]</div>
+<p>which we call the <em>reflection coefficient</em> <span class="math notranslate nohighlight">\(R\)</span>, that gives us the fraction of the wave that gets reflected. Furthermore, it is also given as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+R = \frac{Z_{a} - Z_{b}}{Z_{a} + Z_{b}}
+\end{align}
+\]</div>
+<p>which shows us how the reflection coefficient <span class="math notranslate nohighlight">\(R\)</span> is related to the impedances of the boundaries that our wave is travelling through.</p>
+<p>We can extend this idea to find the <em>transmission coefficient</em> <span class="math notranslate nohighlight">\(T\)</span>, which gives us the fraction of the wave that gets transmitted:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+T = \frac{A_{t}}{A_{i}} = \frac{2 Z_{a}}{Z_{a} + Z_{b}}
+\end{align}
+\]</div>
+<p>In order to understand how we came about these derivations, we need to consider conservation of energy and apply it to amplitudes of the wave (incoming, reflected and transmitted). To make this easier to understand, we can represent the same coefficients using electromagnetic (EM) waves, where we denote the amplitude of the incoming EM wave as <span class="math notranslate nohighlight">\(E_i\)</span>, amplitude of the reflected wave as <span class="math notranslate nohighlight">\(E_r\)</span> and transmitted as <span class="math notranslate nohighlight">\(E_t\)</span>. We can also use the well known refractive indices of different media denoted as <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> that are analagous to <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. Thus, we arrive at very similar equations relating amplitudes of the incoming, reflected and transmitted EM wave and refractive indices of media that it propagates through:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+r = \frac{E_r}{E_i} = \frac{n_1 - n_2}{n_1 + n_2}
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is the reflection coefficient for EM waves (analagous to <span class="math notranslate nohighlight">\(R\)</span> for impedance) and</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is the transmission coefficient analagous to <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Thus, we are able to connect the concept of impedance to concept of refractive index and how waves (regardless of their type) behave when they propagate from one media to another.</p>
+<p>Now that we have mathematical expressions ready, we can try to visualise exactly how impedance affects the behaviour of a wave.</p>
+</div>
+<div class="section" id="this-is-where-my-animation-is-going-to-be">
+<h3>this is where my animation is going to be<a class="headerlink" href="#this-is-where-my-animation-is-going-to-be" title="Permalink to this headline">¶</a></h3>
+<p>Hopefully, you were able to move the sliders to change the impedance of the boundaries to see how the wave behaves.</p>
+<ul class="simple">
+<li><p>maybe add some questions here about impedance? or maybe save them for when we are applying it to biological impedance (impedance of different tissues)?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="impedance-in-ultrasound">
+<h2>Impedance in ultrasound<a class="headerlink" href="#impedance-in-ultrasound" title="Permalink to this headline">¶</a></h2>
+<p>Ultrasound imaging is a widely used practice in medical practice which relies on propagation of sound waves through different tissue. The term “ultrasound” stems from the fact that the sound waves sent through tissue have a frequency ranging between 2.5 and 10 MHz, which is beyond the audible spectrum for humans [1]. The waves that are firstly send through tissue go through series of reflection and transmission, and are then picked up again to create an imagine of the organ that is of interest.</p>
+</div>
+<div class="section" id="references-and-further-readings">
+<h2>References and further readings<a class="headerlink" href="#references-and-further-readings" title="Permalink to this headline">¶</a></h2>
+<p>* <a class="reference external" href="https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf">https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf</a></p>
+<p>** <a class="reference external" href="https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage">https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage</a></p>
+<p>[1] <a class="reference external" href="https://thoracickey.com/physical-principles-of-ultrasound-and-generation-of-images/">https://thoracickey.com/physical-principles-of-ultrasound-and-generation-of-images/</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="EscapeVelocity.html" title="previous page">Escape Velocity</a>
+    <a class='right-next' id="next-link" href="Demos/Orbit.html" title="next page">Orbit</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
