@@ -6,6 +6,7 @@ parts:
     chapters:
     - file: notebooks/EscapeVelocity
     - file: notebooks/Impedance
+    - file: notebooks/Oberth
   - caption: Demos
     chapters:
     - file: notebooks/Demos/Orbit

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escape Velocity &#8212; Visualizations and Exercises</title>
+    <title>Oberth &#8212; Visualizations and Exercises</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -60,8 +60,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Impedance" href="Impedance.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="next" title="Orbit" href="Demos/Orbit.html" />
+    <link rel="prev" title="Impedance" href="Impedance.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -102,8 +102,8 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="EscapeVelocity.html">
    Escape Velocity
   </a>
  </li>
@@ -112,8 +112,8 @@
    Impedance
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Oberth.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Oberth
   </a>
  </li>
@@ -188,7 +188,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/EscapeVelocity.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/Oberth.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -219,20 +219,52 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leaving-earth">
-   Leaving Earth
+  <a class="reference internal nav-link" href="#learning-outcome">
+   Learning outcome
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theory">
+   Theory
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
+    <a class="reference internal nav-link" href="#fundamentals">
+     Fundamentals
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oberth-effect">
+     Oberth effect
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principle">
+       Principle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mathematical-description">
+       Mathematical description
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leaving-the-solar-system">
-   Leaving the Solar System
+  <a class="reference internal nav-link" href="#excercises">
+   Excercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refrences">
+   Refrences
   </a>
  </li>
 </ul>
@@ -246,65 +278,100 @@
         
               <div>
                 
-  <div class="section" id="escape-velocity">
-<h1>Escape Velocity<a class="headerlink" href="#escape-velocity" title="Permalink to this headline">¶</a></h1>
-<p>Say you wanted to get to Proxima Centauri, the star closest to our own.</p>
-<p><img alt="Proxima Centauri" src="../_images/proxima.jpg" /></p>
-<p>It’s 4.2465 light-years away, or about 40,208,000,000,000 km. That’s pretty far, but you said nothing about getting there <em>soon</em>, so it shouldn’t be that hard.</p>
-<div class="section" id="leaving-earth">
-<h2>Leaving Earth<a class="headerlink" href="#leaving-earth" title="Permalink to this headline">¶</a></h2>
-<p>The first problem you’d face is leaving the Earth. We will ignore air resistance, and how to gain speed, and simply assume you start fully sped up. How much speed would you need to leave the Earth for good?</p>
-<p>The real problem is the Earths gravity. It pulls you towards it with a force <span class="math notranslate nohighlight">\(F\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-F = \frac{G m_1 m_2}{r^2}
-\end{aligned}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m_1\)</span> is the mass of the Earth, <span class="math notranslate nohighlight">\(m_2\)</span> is your mass, and <span class="math notranslate nohighlight">\(r\)</span> is the distance from you to the center of the Earth.</p>
-<p>The first key insight here is that as you go further away from the Earth, the force of gravity approaches zero. This means that you don’t need to fight gravity forever to escape it, you only need to get far enough away with a little speed left over, that way gravity will effectively dissipate. What goes up mustn’t come down.</p>
-<p>The second key insight is that when you’re only being affected by gravity, you’re either speeding up and moving down, or slowing down and moving up. It just so happens that these two behaviours are in perfect balance, the kinetic energy you lose when slowing down while moving up is gained as gravitational potential energy. And when you move closer to the Earth and speed up, your gravitational potential energy is being turned back into kinetic energy.</p>
-<p>Kinetic energy is the energy associated the the movement of an object with mass <span class="math notranslate nohighlight">\(m\)</span> and velocity <span class="math notranslate nohighlight">\(v\)</span>, and is given by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-E_K = \frac{1}{2}mv^2
-\end{aligned}
-\]</div>
-<p>The interactive window below shows the value of kinetic energy and gravitational potential energy when moving in a gravitational field.</p>
-<article id="energy_canvas"></article><p>The interactive window above showed how with enough initial kinetic energy you can escape gravity, but just how much do you need? We can find this by calculating the amount of <strong>work</strong> gravity does from your starting distance <span class="math notranslate nohighlight">\(r_0\)</span> into infinity. Energy that is “taken” or “given” by a force is given by the amount of work. Work is equal to force times distance, but since the force of gravity changes with distance, we need to integrate the force over the distance instead:</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-W_G = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr
-\end{aligned}
-\]</div>
-<div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> How does your kinetic energy change with distance when you’re very far away from Earth? What about when you’re very close?</p>
-<p><strong>b)</strong> Does the total energy change at all? Why?</p>
-<p><strong>c)</strong> Calculate the integral to find the initial kinetic energy you need to escape the Earths gravity.</p>
-<p><strong>d)</strong> Find the initial velocity you need to escape the Earths gravity.</p>
-<p><strong>e)</strong> If you started falling towards the Earth from infinitely far away (with no velocity), how fast would you be going when you hit the ground? What if you started falling from 1000 km away?</p>
-<p><strong>f)</strong> Below is an interavtive window that lets you choose your starting direction when leaving Earth. What initial velocity would you need to escape the Earths gravity if you started at a 45<span class="math notranslate nohighlight">\(^\circ\)</span> angle?</p>
-<p>Useful values: <span class="math notranslate nohighlight">\(G = 6.674*10^{-11}m^3kg^{–1}s^{–2}\)</span>, <span class="math notranslate nohighlight">\(m_1 = 5.972*10^{24}kg\)</span>, <span class="math notranslate nohighlight">\(r_0 = 6.371*10^6 m\)</span> (the radius of the Earth).</p>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-E_K = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr = \left[-\frac{G m_1 m_2}{r}\right]_{r_0}^{\infty} = 0 + \frac{G m_1 m_2}{r_0} = \frac{G m_1 m_2}{r_0}
-\end{aligned}
-\]</div>
-<p>This is how much kinetic energy gravity can “take”, and if you start with more kinetic energy than this, gravity will never be able to stop you. Proxima Centauri better get ready!*</p>
-<p>TODO</p>
+  <div class="section" id="oberth">
+<h1>Oberth<a class="headerlink" href="#oberth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-outcome">
+<h2>Learning outcome<a class="headerlink" href="#learning-outcome" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Mechanical energy and conservation laws</p></li>
+<li><p>Relate velocity to energy</p></li>
+<li><p>Newtonian motion and forces</p></li>
+</ul>
 </div>
-<p>————-[Interactive where you choose the starting angle and see how you fly. The point is that starting angle doesen’t matter, as long as you’re moving away from the Earth with enough kinetic energy. You can also choose to go slow to enter orbit or crash into the Earth, depending on how steep the angle is.]———-</p>
-<p><img alt="Angle Interactive Placeholder" src="../_images/angle.jpg" /></p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we are going to look at the case where a spaceship enters a planet’s gravitational well. Largly based on  the laws of energy conservation in addition to simple astoronomical and Newtonian consideratons, we will investigate how the spaceship most sparingly can apply short impulsive bursts of its propelant to increase mechanical energy and escape orbit.</p>
+</div>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fundamentals">
+<h3>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">¶</a></h3>
+<p>The gravitiational force between the masses of a spaceship m, and a planet M, where M &gt;&gt; m, is given by the following.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+F = G\frac{mM}{r^2}
+\end{align}
+\]</div>
+<p>From this expression, we can derive the spaceship’s mechanical energy by the sum of its potential (U) and kinetic (U) component. We get:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+E = -G\frac{Mm}{r} + \frac{1}{2}mv^2
+\end{align}
+\]</div>
+<p>In the spaceship’s path, there are two locations of particular interest, the apoasis (Point A) and the periapsis (point P). The latter is the point in which the spaceship is closest to the planet during orbit, and likewise the furthest point is called the apoasis. From Kepler’s second law and additonaly the law of conservation for angular momentum, the velocity of the spacehip will be inversly proportional with the distance between the spaceship and the planet. This imply that the spaceship travels faster near the periapsis, and slower around the apoasis. The mean orbital velocity can be approximated to
+$<span class="math notranslate nohighlight">\(
+v_0 = \sqrt{\frac{GM}{r}}
+\)</span>$
+, where G is the gravitational parameter and M is the mass of the planet. Remember that this only holds true when M &gt;&gt; m.</p>
+</div>
+<div class="section" id="oberth-effect">
+<h3>Oberth effect<a class="headerlink" href="#oberth-effect" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="principle">
+<h4>Principle<a class="headerlink" href="#principle" title="Permalink to this headline">¶</a></h4>
+<p>The Oberth effect is a method used in spacetravel to boost the speed of a rocket by falling into a gravitatinal well and utilizing short impulisive burns of fuel. Given that the velocity of the rocket increase by a constant increament, the Oberth effect states that performing an impulsive burn near the periapsis has the biggest impact on the rocket’s boost in velocity and hence also its mechanical energy. One way of explaining this phenonomen is to consider the kinetic energy of the spaceship at point A and P. Lets say that the propelent accelerate the rocket with velocity <span class="math notranslate nohighlight">\(v_R\)</span> with an increament of <span class="math notranslate nohighlight">\(\delta v\)</span>, the new velocity after the impuslive burn would then be <span class="math notranslate nohighlight">\(v + \delta v\)</span>. The change in kinetic energy during the reaction is:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\begin{align}
+\Delta K_R = 1/2 m(v_R + \delta v)^2 - 1/2 mv_R^2
+\end{align}
+$$.\\Parallel, the change in the kinetic energy of the exhaust is equal to\end{aligned}\end{align} \]</div>
+<p>\begin{align}
+\Delta K_{ex} = 1/2 m_{ex}(v_R - v_{ex})^2 - 1/2m_{ex}v_{ex}^2
+\end{align}
+$$</p>
+<p>, assuming the exhaust velocity is constant and in the opposite direction.</p>
+<p>From this argument, its clear that the rocket sees an increase in kinetic energy when traversing at higher velocity, but why is that? An eqvivalent way of looking at this is to evaluate the work being done. Seeing that the work done by the propelant is equal to</p>
+<div class="math notranslate nohighlight">
+\[
+W = F *\delta x = F \cdot v \delta t
+\]</div>
+<p>, the propelent can do more work on the rocket by applying the same force, beacosue near the periospis the rocket covers a greater distance per unit time than elsewhere in the orbit. And this work is equal to the rockets mechanical energy whitch in term is equal to the difference in kinetic energy from velocity <span class="math notranslate nohighlight">\(v  -&gt; v + \delta v\)</span>.</p>
+</div>
+<div class="section" id="mathematical-description">
+<h4>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this headline">¶</a></h4>
+<p>By writing out the difference in kinetic energy for the rocket, and exhaust seperatly, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\Delta K_R &amp;= 1/2 M_R v^2 + vM_R \cdot \Delta v \\
+\Delta K_{ex} &amp;= 1/2m_{ex}v_{ex}^2 -vm_{ex}v_{ex} 
+\end{align}
+\end{split}\]</div>
+<p>And finally taking the sum of the two components to calcualte the total difference in kinetic energy for the entire system. From the law of momentum conservation <span class="math notranslate nohighlight">\(m_{ex}v_{ex} = M_R \Delta v\)</span>, the sum becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\Delta K = \Delta K_R + \Delta K_{ex} = 1/2 M_R \Delta v^2 + 1/2m_{ex} v_{ex}^2 = \Delta E_{chem}
+\end{align}
+\]</div>
+<p>, where <span class="math notranslate nohighlight">\(\Delta E_{chem}\)</span> is kinetic energy created from the propelent’s chemical energy. From this we can read that as the velocity of the rocket increases, a larger portion of the propelents mechanical energy converts to kinetic energy of the rocket, rather than the exhaust.</p>
 </div>
 </div>
-<div class="section" id="leaving-the-solar-system">
-<h2>Leaving the Solar System<a class="headerlink" href="#leaving-the-solar-system" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>At what velocity does all of <span class="math notranslate nohighlight">\(\Delta E_{chem} \)</span> convert to <span class="math notranslate nohighlight">\(\Delta K_R\)</span>?</p></li>
+<li><p>What is the formula for potential energy of the rocket?</p></li>
+<li><p>Using the definition of mechanical energy in a gravitational well, and the law of conservation of mechanical energy, calculate the rocket velocity after an impulsive burn at the perioapsis.</p></li>
+<li><p>What is the velocity after an impulsive burn at the apoasis?</p></li>
+<li><p>At what point in orbit is it most benefital for the rocket’s mechanical energy to do an impulsive burn?</p></li>
+</ol>
+</div>
+<div class="section" id="refrences">
+<h2>Refrences<a class="headerlink" href="#refrences" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -333,8 +400,8 @@ E_K = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr = 
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="Impedance.html" title="next page">Impedance</a>
+    <a class='left-prev' id="prev-link" href="Impedance.html" title="previous page">Impedance</a>
+    <a class='right-next' id="next-link" href="Demos/Orbit.html" title="next page">Orbit</a>
 
         </div>
         
