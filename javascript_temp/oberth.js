@@ -1,7 +1,6 @@
-
 let jorda;
 let spacex;
-let G = 4;
+let G = 20;
 
 
 function setup() {
@@ -58,13 +57,18 @@ function draw() {
   // Lag rektangel over energi, vet ikke hvordan per nå.
 
 
-  noStroke(); fill(255, 0, 0);
+  //noStroke(); fill(255, 0, 0);
 
-  ellipse(-300,-100, spacex.kinetic() * 5, spacex.kinetic() * 5);
-  textSize(15);
-  fill(255);
-  text("Kinetisk energi", -350, -75);
+  //ellipse(-300,-100, spacex.E_k * 0.5, spacex.E_k * 0.5);
+  //textSize(15);
+  //fill(255);
+  //text("Kinetisk energi", -350, -75);
 
+  text("Kinetisk energi :" + spacex.E_k, -400, -100);
+  text("potensiel energi:" + spacex.E_p, -400, -140);
+
+
+  text("Mekanisk energi :" + spacex.E, -350, 400);
 
 
 }
@@ -77,6 +81,7 @@ class Planet {
     this.vel = vel;
     this.r = this.mass;
   }
+
   show() {
     noStroke(); fill(255);
     ellipse(this.pos.x, this.pos.y, this.r, this.r);
@@ -90,8 +95,7 @@ class Planet {
     let f = this.pos.copy().sub(romskip.pos);
     f.setMag( (G * this.mass * romskip.mass) / (r * r) );
     romskip.grav(f);
-
-
+    romskip.E_p = - G * (romskip.mass * this.mass) / r;
 
   }
 
@@ -106,6 +110,8 @@ class Romskip {
     this.drivstoff = 400;
     this.history = [];
     this.E_k = 0;
+    this.E_p = 0;
+    this.E = 0;
   }
 
   show() {
@@ -123,7 +129,7 @@ class Romskip {
   }
 
   kinetic() {
-    return 0.5 * this.mass * (this.vel.mag()**2);
+    this.E_k = 0.5 * this.mass * (this.vel.mag()**2);
   }
 
 
@@ -131,7 +137,8 @@ class Romskip {
     this.pos.x += this.vel.x;
     this.pos.y += this.vel.y;
     this.history.push(this.pos.copy());
-
+    this.kinetic();
+    this.E = this.E_k + this.E_p; // Total energy
   }
 
   grav(f) {
@@ -141,8 +148,13 @@ class Romskip {
 
   gas() {
     if (this.drivstoff > 0) {
-      this.drivstoff -= 1;
-      this.vel.mult(1.0003);
+      this.drivstoff -= 10;
+      let norm =  this.vel.copy();
+      norm.normalize();
+      this.vel.x += norm.x / 50;
+      this.vel.y += norm.y / 50;
     }
   }
+
+
 }
