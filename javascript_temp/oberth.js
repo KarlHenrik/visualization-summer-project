@@ -4,7 +4,7 @@ let G = 20;
 
 
 function setup() {
-  createCanvas(700, 700);
+  createCanvas(1000, 1000);
 
 
   jorda = new Planet(100, createVector(0,0), createVector(0,0));
@@ -36,17 +36,17 @@ function draw() {
   // Lag rektangel som har full bar med farge og tekst drivstoff inni, for hvert mustrykk, går fargen mot venstre.
 
   noFill(); stroke(0);
-  rect(-200, -240, 400, 70); // Ufarget bar for drivstoff
+  rect(-250, -300, 400, 70); // Ufarget bar for drivstoff
 
 
 
   fill(255, 0, 0);
-  rect(-200, -240, spacex.drivstoff, 70); //Farget bar for drivstoff
+  rect(-250, -300, spacex.drivstoff, 70); //Farget bar for drivstoff
 
   //text:
   textSize(28);
   fill(255);
-  text("Drivstoff", -50, -200);
+  text("Drivstoff", -100, -260);
 
   if (mouseIsPressed && // Bruk drivstoff
         mouseX > 0 && mouseY > 0 &&
@@ -64,8 +64,8 @@ function draw() {
   //fill(255);
   //text("Kinetisk energi", -350, -75);
 
-  text("Kinetisk energi :" + spacex.E_k, -400, -100);
-  text("potensiel energi:" + spacex.E_p, -400, -140);
+  text("Kinetisk energi :" + spacex.E_k, -500, -140);
+  text("potensiel energi:" + spacex.E_p, -500, -180);
 
 
   text("Mekanisk energi :" + spacex.E, -350, 400);
