@@ -229,42 +229,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#theory">
-   Theory
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fundamentals">
-     Fundamentals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#oberth-effect">
-     Oberth effect
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#principle">
-       Principle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mathematical-description">
-       Mathematical description
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#excercises">
-   Excercises
+  <a class="reference internal nav-link" href="#fundamental-theory">
+   Fundamental theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#refrences">
-   Refrences
+  <a class="reference internal nav-link" href="#energy">
+   Energy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#work">
+   Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paradox">
+   Paradox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additonal-excercises">
+   Additonal excercises
   </a>
  </li>
 </ul>
@@ -290,88 +276,96 @@
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this example, we are going to look at the case where a spaceship enters a planet’s gravitational well. Largly based on  the laws of energy conservation in addition to simple astoronomical and Newtonian consideratons, we will investigate how the spaceship most sparingly can apply short impulsive bursts of its propelant to increase mechanical energy and escape orbit.</p>
+<p>In this example, we are going to look at a manauver in spacetravel called the Oberth effect. This is a way for a rocket to gain additional speed and mechanical by falling into a planet’s gravitational well and applying its propelent at a very specific location in orbit.</p>
 </div>
-<div class="section" id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="fundamentals">
-<h3>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">¶</a></h3>
-<p>The gravitiational force between the masses of a spaceship m, and a planet M, where M &gt;&gt; m, is given by the following.</p>
+<div class="section" id="fundamental-theory">
+<h2>Fundamental theory<a class="headerlink" href="#fundamental-theory" title="Permalink to this headline">¶</a></h2>
+<p>In orbit the spaceship is primarily affected by the gravitaional force between its own mass and the mass of a much larger planet. If m denotes the mass of the spaceship, and M is the mass of a given planet, given that M &gt;&gt; m the gravitational force is given by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
 F = G\frac{mM}{r^2}
 \end{align}
 \]</div>
-<p>From this expression, we can derive the spaceship’s mechanical energy by the sum of its potential (U) and kinetic (U) component. We get:</p>
+<p>Resulting from this force, we can calcualte the mechanical energy of the spacship from the sum of its potential (U) and kinetic (k) energy.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-E = -G\frac{Mm}{r} + \frac{1}{2}mv^2
+E = U + K
 \end{align}
 \]</div>
-<p>In the spaceship’s path, there are two locations of particular interest, the apoasis (Point A) and the periapsis (point P). The latter is the point in which the spaceship is closest to the planet during orbit, and likewise the furthest point is called the apoasis. From Kepler’s second law and additonaly the law of conservation for angular momentum, the velocity of the spacehip will be inversly proportional with the distance between the spaceship and the planet. This imply that the spaceship travels faster near the periapsis, and slower around the apoasis. The mean orbital velocity can be approximated to
-$<span class="math notranslate nohighlight">\(
-v_0 = \sqrt{\frac{GM}{r}}
-\)</span>$
-, where G is the gravitational parameter and M is the mass of the planet. Remember that this only holds true when M &gt;&gt; m.</p>
-</div>
-<div class="section" id="oberth-effect">
-<h3>Oberth effect<a class="headerlink" href="#oberth-effect" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="principle">
-<h4>Principle<a class="headerlink" href="#principle" title="Permalink to this headline">¶</a></h4>
-<p>The Oberth effect is a method used in spacetravel to boost the speed of a rocket by falling into a gravitatinal well and utilizing short impulisive burns of fuel. Given that the velocity of the rocket increase by a constant increament, the Oberth effect states that performing an impulsive burn near the periapsis has the biggest impact on the rocket’s boost in velocity and hence also its mechanical energy. One way of explaining this phenonomen is to consider the kinetic energy of the spaceship at point A and P. Lets say that the propelent accelerate the rocket with velocity <span class="math notranslate nohighlight">\(v_R\)</span> with an increament of <span class="math notranslate nohighlight">\(\delta v\)</span>, the new velocity after the impuslive burn would then be <span class="math notranslate nohighlight">\(v + \delta v\)</span>. The change in kinetic energy during the reaction is:</p>
+<blockquote>
+<div><p><em><strong>Write down the expressions for the kinetic and potential energy of the spacship</strong></em></p>
+<p><em><strong>Would you excpect this quantaty to change during orbit?</strong></em></p>
+</div></blockquote>
+<p>In the spaceship’s path, there are two locations of particular interest, the apoasis and the periapsis. The latter is the point in which the spaceship is closest to the planet during orbit, and likewise the furthest point is called the apoasis. The mean velocity of the spaceship during orbit can be approximated to</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
+\[
+v_0 = \sqrt{\frac{GM}{r}}
+\]</div>
+<p>, where r is the distance between the center of mass of the planet and the spaceship.</p>
+<blockquote>
+<div><p><em><strong>Based on the equation above, do you think the oribtal velcoty is greatest at the periapsis or the apoasis?</strong></em></p>
+<p><em><strong>Can you name one law of physics to validate your answer? (hint: Kepler’s laws)</strong></em></p>
+<p><em><strong>Mention one approximation that must be condidered for this equation to be valid (hint: What is the main difference between a spaceship and a planet?)</strong></em></p>
+</div></blockquote>
+</div>
+<div class="section" id="energy">
+<h2>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h2>
+<p>A rocket operates by transferring momentum to its propelant with a constant backwards exhaust velocity. Thus, regardles of the rocket’s intial velocity and postion in orbit, the propelent produce a constant increament to the velocity. In this example we will treat fuelusage in the rocket as brief implusive burn. When accelerated by the propelent, the rocket expcectedly have increase in its kinetic energy. We say that after a burn, the rocket alters its velocity from v to <span class="math notranslate nohighlight">\( v + \delta v \)</span>, therby causing a change in the kinetic energy as well.</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{align}
 \Delta K_R = 1/2 m(v_R + \delta v)^2 - 1/2 mv_R^2
 \end{align}
-$$.\\Parallel, the change in the kinetic energy of the exhaust is equal to\end{aligned}\end{align} \]</div>
-<p>\begin{align}
-\Delta K_{ex} = 1/2 m_{ex}(v_R - v_{ex})^2 - 1/2m_{ex}v_{ex}^2
-\end{align}
-$$</p>
-<p>, assuming the exhaust velocity is constant and in the opposite direction.</p>
-<p>From this argument, its clear that the rocket sees an increase in kinetic energy when traversing at higher velocity, but why is that? An eqvivalent way of looking at this is to evaluate the work being done. Seeing that the work done by the propelant is equal to</p>
+\]</div>
+<blockquote>
+<div><p><em><strong>From the equation above, do you excpect the change in kinetic energy to
+be greater at the periapsis or the apoasis after an impulsive burn?</strong></em></p>
+<p><em><strong>Given that an impulsive burn produce a 10 % increase to the velocity.
+If the rocket travels with a speed of 10 m/s at the apoasis and 100 m/s at the
+periapsis. Calcualte the change in kinetic energy at both locations? Was
+your guess correct?</strong></em></p>
+<p><em><strong>Write down the expression for the change in kinetic energy for the
+exhaust (hint: Assume the exhaust velocity is constant and in the opposite
+direction of the rocket’s velocity)</strong></em></p>
+</div></blockquote>
+</div>
+<div class="section" id="work">
+<h2>Work<a class="headerlink" href="#work" title="Permalink to this headline">¶</a></h2>
+<p>In an analogous way of seeing this result, lets consider the mechanical energy, or work being done by the propelant on the rocket. Assuming the angle between the exhaust and the traveling direction of the rocket is equal to <span class="math notranslate nohighlight">\( \pi \)</span>, the work can be defined as the dot product of the force and distance.</p>
 <div class="math notranslate nohighlight">
 \[
-W = F *\delta x = F \cdot v \delta t
+W = F \cdot \delta x
 \]</div>
-<p>, the propelent can do more work on the rocket by applying the same force, beacosue near the periospis the rocket covers a greater distance per unit time than elsewhere in the orbit. And this work is equal to the rockets mechanical energy whitch in term is equal to the difference in kinetic energy from velocity <span class="math notranslate nohighlight">\(v  -&gt; v + \delta v\)</span>.</p>
+<blockquote>
+<div><p><em><strong>Rewrite this expression to include the velocity of the rocket</strong></em></p>
+<p><em><strong>Noting that the force remains constant, what is the reason that the mechanical energy icreases more near the periapsis than the apoasis when applying propelent?</strong></em></p>
+</div></blockquote>
 </div>
-<div class="section" id="mathematical-description">
-<h4>Mathematical description<a class="headerlink" href="#mathematical-description" title="Permalink to this headline">¶</a></h4>
-<p>By writing out the difference in kinetic energy for the rocket, and exhaust seperatly, we get</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
-\Delta K_R &amp;= 1/2 M_R v^2 + vM_R \cdot \Delta v \\
-\Delta K_{ex} &amp;= 1/2m_{ex}v_{ex}^2 -vm_{ex}v_{ex} 
-\end{align}
-\end{split}\]</div>
-<p>And finally taking the sum of the two components to calcualte the total difference in kinetic energy for the entire system. From the law of momentum conservation <span class="math notranslate nohighlight">\(m_{ex}v_{ex} = M_R \Delta v\)</span>, the sum becomes</p>
+<div class="section" id="paradox">
+<h2>Paradox<a class="headerlink" href="#paradox" title="Permalink to this headline">¶</a></h2>
+<p>Earlier, we learned that the the rocket can gain addition mechanical energy by correctly applying the chemical energy in the propelent. But why is that? The propelent energy remains constant throughout the path, and so must the mechanical energy of the entire system in accordance with the law of conservation. So where exactly does this additonal energy stem from?</p>
+<p>Lets consider the total change in kinetic energy for the entire system. Let <span class="math notranslate nohighlight">\( K_R, K_{ex} \)</span> denote the kinetic energy of the rocket and exhaust respectivly, likewise for their induvidual velocities, and finally let <span class="math notranslate nohighlight">\( E_{chem} \)</span> represent the total chemical energy of the propelent.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-\Delta K = \Delta K_R + \Delta K_{ex} = 1/2 M_R \Delta v^2 + 1/2m_{ex} v_{ex}^2 = \Delta E_{chem}
+\Delta K = \Delta K_R + \Delta K_{ex} = 1/2 m_R \Delta v^2 + 1/2m_{ex} v_{ex}^2 = \Delta E_{chem}
 \end{align}
 \]</div>
-<p>, where <span class="math notranslate nohighlight">\(\Delta E_{chem}\)</span> is kinetic energy created from the propelent’s chemical energy. From this we can read that as the velocity of the rocket increases, a larger portion of the propelents mechanical energy converts to kinetic energy of the rocket, rather than the exhaust.</p>
+<blockquote>
+<div><p><em><strong>Derive this expression from the changes in kinetic
+energy of the rocket and exhaust. (hint: Use the law of conserervation for
+momentum)</strong></em>.</p>
+<p><em><strong>At what velocity does all of <span class="math notranslate nohighlight">\( E_{chem} \)</span> transfer to kinetic energy of the rocket? (hint: Look at the expression for <span class="math notranslate nohighlight">\( K_{ex} \)</span>)</strong></em></p>
+<p><em><strong>What happens if the velocity of the rocket increases beyond this value?</strong></em></p>
+</div></blockquote>
 </div>
-</div>
-</div>
-<div class="section" id="excercises">
-<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>At what velocity does all of <span class="math notranslate nohighlight">\(\Delta E_{chem} \)</span> convert to <span class="math notranslate nohighlight">\(\Delta K_R\)</span>?</p></li>
-<li><p>What is the formula for potential energy of the rocket?</p></li>
-<li><p>Using the definition of mechanical energy in a gravitational well, and the law of conservation of mechanical energy, calculate the rocket velocity after an impulsive burn at the perioapsis.</p></li>
-<li><p>What is the velocity after an impulsive burn at the apoasis?</p></li>
-<li><p>At what point in orbit is it most benefital for the rocket’s mechanical energy to do an impulsive burn?</p></li>
-</ol>
-</div>
-<div class="section" id="refrences">
-<h2>Refrences<a class="headerlink" href="#refrences" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="additonal-excercises">
+<h2>Additonal excercises<a class="headerlink" href="#additonal-excercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em><strong>Find the expression for the velocity after an impulsive burn at both the apoasis and the periapsis. See this (link) for help.</strong></em></p></li>
+</ul>
 </div>
 </div>
 
