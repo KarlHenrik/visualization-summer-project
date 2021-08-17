@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oberth &#8212; Visualizations and Exercises</title>
+    <title>The Oberth Effect &#8212; Visualizations and Exercises</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,11 +42,18 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/energy.js"></script>
-    <script src="../_static/starfield.js"></script>
-    <script src="../_static/p5.min.js"></script>
-    <script src="../_static/orbit.js"></script>
     <script src="../_static/initialize.js"></script>
+    <script src="../_static/oberthdemo.js"></script>
+    <script src="../_static/orbit.js"></script>
+    <script src="../_static/p5.min.js"></script>
+    <script src="../_static/starfield.js"></script>
     <script src="../_static/vectors.js"></script>
+    <script src="../_static/.ipynb_checkpoints/energy-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/initialize-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/oberthdemo-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/orbit-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/starfield-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/vectors-checkpoint.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -56,8 +63,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Orbit" href="Demos/Orbit.html" />
@@ -114,7 +119,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Oberth
+   The Oberth Effect
   </a>
  </li>
 </ul>
@@ -188,7 +193,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/Oberth.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/OberthDemo.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -219,38 +224,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-outcome">
-   Learning outcome
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fundamental-theory">
-   Fundamental theory
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#energy">
-   Energy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#work">
-   Work
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#paradox">
-   Paradox
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additonal-excercises">
-   Additonal excercises
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises:
   </a>
  </li>
 </ul>
@@ -264,108 +239,15 @@
         
               <div>
                 
-  <div class="section" id="oberth">
-<h1>Oberth<a class="headerlink" href="#oberth" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-outcome">
-<h2>Learning outcome<a class="headerlink" href="#learning-outcome" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Mechanical energy and conservation laws</p></li>
-<li><p>Relate velocity to energy</p></li>
-<li><p>Newtonian motion and forces</p></li>
-</ul>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this example, we are going to look at a manauver in spacetravel called the Oberth effect. This is a way for a rocket to gain additional speed and mechanical by falling into a planet’s gravitational well and applying its propelent at a very specific location in orbit.</p>
-</div>
-<div class="section" id="fundamental-theory">
-<h2>Fundamental theory<a class="headerlink" href="#fundamental-theory" title="Permalink to this headline">¶</a></h2>
-<p>In orbit the spaceship is primarily affected by the gravitaional force between its own mass and the mass of a much larger planet. If m denotes the mass of the spaceship, and M is the mass of a given planet, given that M &gt;&gt; m the gravitational force is given by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{align}
-F = G\frac{mM}{r^2}
-\end{align}
-\]</div>
-<p>Resulting from this force, we can calcualte the mechanical energy of the spacship from the sum of its potential (U) and kinetic (k) energy.</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{align}
-E = U + K
-\end{align}
-\]</div>
-<blockquote>
-<div><p><em><strong>Write down the expressions for the kinetic and potential energy of the spacship</strong></em></p>
-<p><em><strong>Would you excpect this quantaty to change during orbit?</strong></em></p>
-</div></blockquote>
-<p>In the spaceship’s path, there are two locations of particular interest, the apoasis and the periapsis. The latter is the point in which the spaceship is closest to the planet during orbit, and likewise the furthest point is called the apoasis. The mean velocity of the spaceship during orbit can be approximated to</p>
-<div class="math notranslate nohighlight">
-\[
-v_0 = \sqrt{\frac{GM}{r}}
-\]</div>
-<p>, where r is the distance between the center of mass of the planet and the spaceship.</p>
-<blockquote>
-<div><p><em><strong>Based on the equation above, do you think the oribtal velcoty is greatest at the periapsis or the apoasis?</strong></em></p>
-<p><em><strong>Can you name one law of physics to validate your answer? (hint: Kepler’s laws)</strong></em></p>
-<p><em><strong>Mention one approximation that must be condidered for this equation to be valid (hint: What is the main difference between a spaceship and a planet?)</strong></em></p>
-</div></blockquote>
-</div>
-<div class="section" id="energy">
-<h2>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h2>
-<p>A rocket operates by transferring momentum to its propelant with a constant backwards exhaust velocity. Thus, regardles of the rocket’s intial velocity and postion in orbit, the propelent produce a constant increament to the velocity. In this example we will treat fuelusage in the rocket as brief implusive burn. When accelerated by the propelent, the rocket expcectedly have increase in its kinetic energy. We say that after a burn, the rocket alters its velocity from v to <span class="math notranslate nohighlight">\( v + \delta v \)</span>, therby causing a change in the kinetic energy as well.</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{align}
-\Delta K_R = 1/2 m(v_R + \delta v)^2 - 1/2 mv_R^2
-\end{align}
-\]</div>
-<blockquote>
-<div><p><em><strong>From the equation above, do you excpect the change in kinetic energy to
-be greater at the periapsis or the apoasis after an impulsive burn?</strong></em></p>
-<p><em><strong>Given that an impulsive burn produce a 10 % increase to the velocity.
-If the rocket travels with a speed of 10 m/s at the apoasis and 100 m/s at the
-periapsis. Calcualte the change in kinetic energy at both locations? Was
-your guess correct?</strong></em></p>
-<p><em><strong>Write down the expression for the change in kinetic energy for the
-exhaust (hint: Assume the exhaust velocity is constant and in the opposite
-direction of the rocket’s velocity)</strong></em></p>
-</div></blockquote>
-</div>
-<div class="section" id="work">
-<h2>Work<a class="headerlink" href="#work" title="Permalink to this headline">¶</a></h2>
-<p>In an analogous way of seeing this result, lets consider the mechanical energy, or work being done by the propelant on the rocket. Assuming the angle between the exhaust and the traveling direction of the rocket is equal to <span class="math notranslate nohighlight">\( \pi \)</span>, the work can be defined as the dot product of the force and distance.</p>
-<div class="math notranslate nohighlight">
-\[
-W = F \cdot \delta x
-\]</div>
-<blockquote>
-<div><p><em><strong>Rewrite this expression to include the velocity of the rocket</strong></em></p>
-<p><em><strong>Noting that the force remains constant, what is the reason that the mechanical energy icreases more near the periapsis than the apoasis when applying propelent?</strong></em></p>
-</div></blockquote>
-</div>
-<div class="section" id="paradox">
-<h2>Paradox<a class="headerlink" href="#paradox" title="Permalink to this headline">¶</a></h2>
-<p>Earlier, we learned that the the rocket can gain addition mechanical energy by correctly applying the chemical energy in the propelent. But why is that? The propelent energy remains constant throughout the path, and so must the mechanical energy of the entire system in accordance with the law of conservation. So where exactly does this additonal energy stem from?</p>
-<p>Lets consider the total change in kinetic energy for the entire system. Let <span class="math notranslate nohighlight">\( K_R, K_{ex} \)</span> denote the kinetic energy of the rocket and exhaust respectivly, likewise for their induvidual velocities, and finally let <span class="math notranslate nohighlight">\( E_{chem} \)</span> represent the total chemical energy of the propelent.</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{align}
-\Delta K = \Delta K_R + \Delta K_{ex} = 1/2 m_R \Delta v^2 + 1/2m_{ex} v_{ex}^2 = \Delta E_{chem}
-\end{align}
-\]</div>
-<blockquote>
-<div><p><em><strong>Derive this expression from the changes in kinetic
-energy of the rocket and exhaust. (hint: Use the law of conserervation for
-momentum)</strong></em>.</p>
-<p><em><strong>At what velocity does all of <span class="math notranslate nohighlight">\( E_{chem} \)</span> transfer to kinetic energy of the rocket? (hint: Look at the expression for <span class="math notranslate nohighlight">\( K_{ex} \)</span>)</strong></em></p>
-<p><em><strong>What happens if the velocity of the rocket increases beyond this value?</strong></em></p>
-</div></blockquote>
-</div>
-<div class="section" id="additonal-excercises">
-<h2>Additonal excercises<a class="headerlink" href="#additonal-excercises" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><em><strong>Find the expression for the velocity after an impulsive burn at both the apoasis and the periapsis. See this (link) for help.</strong></em></p></li>
-</ul>
+  <div class="section" id="the-oberth-effect">
+<h1>The Oberth Effect<a class="headerlink" href="#the-oberth-effect" title="Permalink to this headline">¶</a></h1>
+<article id="oberthdemo"></article><div class="section" id="exercises">
+<h2>Exercises:<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p><strong>a)</strong> Where in your orbit should you burn your fuel to gain the most energy?</p>
+<p><strong>b)</strong> Explain the Oberth effect using the definition of work: Force times distance.</p>
+<p><strong>c)</strong> Is there any significance to reaching positive mechanical energy when the potential energy is defined as being zero when infinitely far away?</p>
+<p><strong>d)</strong> Explain the Oberth effect using the energy before and after an elastic collision.</p>
+<p><strong>e)</strong> Where does the “free” energy come from? How is energy still conserved even though you can gain a different amount depending on where you use your fuel?</p>
 </div>
 </div>
 

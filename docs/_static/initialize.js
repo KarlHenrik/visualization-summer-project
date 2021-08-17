@@ -5,6 +5,7 @@ function setup() {
         starfield: starfield,
         vectors: vectors,
         energy_canvas: energy,
+        oberthdemo: oberth,
     };
 
     var myEle;
