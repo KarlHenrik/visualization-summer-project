@@ -48,12 +48,6 @@
     <script src="../_static/p5.min.js"></script>
     <script src="../_static/starfield.js"></script>
     <script src="../_static/vectors.js"></script>
-    <script src="../_static/.ipynb_checkpoints/energy-checkpoint.js"></script>
-    <script src="../_static/.ipynb_checkpoints/initialize-checkpoint.js"></script>
-    <script src="../_static/.ipynb_checkpoints/oberthdemo-checkpoint.js"></script>
-    <script src="../_static/.ipynb_checkpoints/orbit-checkpoint.js"></script>
-    <script src="../_static/.ipynb_checkpoints/starfield-checkpoint.js"></script>
-    <script src="../_static/.ipynb_checkpoints/vectors-checkpoint.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -225,44 +219,75 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   Learning objectives:
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Impedance
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   <em>
+    Learning objectives:
+   </em>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-impedance">
    What is impedance?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explaining-characteristic-acoustic-impedance">
      Explaining characteristic acoustic impedance
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#applying-characteristic-acoustic-impedance-to-behaviour-of-waves">
-     Applying characteristic acoustic impedance to behaviour of waves
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reflection-and-transmission-of-waves">
      Reflection and transmission of waves
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#this-is-where-my-animation-is-going-to-be">
-     this is where my animation is going to be
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#this-is-where-my-animation-is-going-to-be-java-script-temp">
+     this is where my animation is going to be java script temp
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#impedance-in-ultrasound">
    Impedance in ultrasound
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ultrasound-imaging-and-prenatal-care">
+     Ultrasound imaging and prenatal care
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ultrasound-properties-of-media">
+     Ultrasound properties of media
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance">
+       Guiding questions - thinking about the wave pulse and linking it to impedance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propagation-through-the-human-body">
+     Propagation through the human body
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#potential-computational-essay-ideas">
+     Potential Computational Essay ideas
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references-and-further-readings">
    References and further readings
   </a>
@@ -280,39 +305,36 @@
                 
   <div class="section" id="impedance">
 <h1>Impedance<a class="headerlink" href="#impedance" title="Permalink to this headline">¶</a></h1>
+</div>
 <div class="section" id="learning-objectives">
-<h2>Learning objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<h1><em>Learning objectives:</em><a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Explain what acoustic impedance is in terms of density and speed of medium</p></li>
-<li><p>Explore reflection and tranmission coefficients physically and mathematically (using visualisation and the slider); what they do to a travelling wave; thinking about energies of waves in terms of reflection and transmission</p></li>
-<li><p>Compare impedance and refractive index (drawing a parallel between these two): not too important but good to know about it for transfer or knowledge</p></li>
+<li><p>Explore reflection and transmission coefficients physically and mathematically (using visualisation and the slider); what they do to a travelling wave; thinking about energies of waves in terms of reflection and transmission</p></li>
+<li><p>Compare impedance and refractive index (drawing a parallel between these two)</p></li>
+<li><p>Differentiating between materials with different impedance values, and what those differences imply for reflection and transmission of waves</p></li>
+<li><p>Relating concepts of wave propagation, reflection and depth of interface</p></li>
+<li><p>Expressing signals sent by the ultrasound device as wave packets with known attributes (i.e frequency)</p></li>
+<li><p>Visualising movement of the wave packet with one and two boundaries</p></li>
+<li><p>Linking known concepts of speed, distance and time to propagation of waves through media to grasp how ultrasound images are formed</p></li>
 </ul>
 </div>
 <div class="section" id="what-is-impedance">
-<h2>What is impedance?<a class="headerlink" href="#what-is-impedance" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>have different types of impedance: acoustic and electrical (explain the difference)</p></li>
-<li><p>have different types of acoustic impedance: specific and non-specific (just acoustic) (explain the difference)</p></li>
-<li><p>acoustic impedance has analogies with electrical impedance</p></li>
-</ul>
+<h1>What is impedance?<a class="headerlink" href="#what-is-impedance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="explaining-characteristic-acoustic-impedance">
-<h3>Explaining characteristic acoustic impedance<a class="headerlink" href="#explaining-characteristic-acoustic-impedance" title="Permalink to this headline">¶</a></h3>
-<p>The acoustic impedance (Z) of a medium is dependent on the density of medium <span class="math notranslate nohighlight">\(\left(\rho \left[\frac{kg}{m^3}\right]\right)\)</span> and the speed of sound through this medium <span class="math notranslate nohighlight">\(\left(c \left[\frac{m}{s}\right]\right)\)</span> , given as
+<h2>Explaining characteristic acoustic impedance<a class="headerlink" href="#explaining-characteristic-acoustic-impedance" title="Permalink to this headline">¶</a></h2>
+<p>The acoustic impedance (Z) of a medium is dependent on the density of medium <span class="math notranslate nohighlight">\(\left(\rho \left[\frac{kg}{m^3}\right]\right)\)</span> and the speed of sound through this medium <span class="math notranslate nohighlight">\(\left(c \left[\frac{m}{s}\right]\right)\)</span> , given as</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{align}
 Z = \rho c
 \end{align}
-As we can see, it is a purely material property, which simply describes how a sound wave behaves when passing through a specific medium.</p>
-<p>When waves are propagating through media with difference impedance, a fraction of those waves is either transmitted or reflected. The <em>difference</em> in impedance is what helps us identify how much of the wave is trasmitted or reflected.</p>
-</div>
-<div class="section" id="applying-characteristic-acoustic-impedance-to-behaviour-of-waves">
-<h3>Applying characteristic acoustic impedance to behaviour of waves<a class="headerlink" href="#applying-characteristic-acoustic-impedance-to-behaviour-of-waves" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>understanding concept visually/intuitively first</p></li>
-<li><p>applying more maths and introducing reflection and transmission coefficient</p></li>
-</ul>
+\]</div>
+<p>As we can see, it is a material property, which simply describes how a sound wave behaves when passing through a specific medium. So, impedance of a material describes its resistance to oscillations.</p>
+<p>When waves are propagating through media with difference impedance, a fraction of those waves is either transmitted or reflected. The <em>difference</em> in impedance is what helps us identify how much of the wave is trasmitted or reflected. We will explore what it means more visually in other sections.</p>
 </div>
 <div class="section" id="reflection-and-transmission-of-waves">
-<h3>Reflection and transmission of waves<a class="headerlink" href="#reflection-and-transmission-of-waves" title="Permalink to this headline">¶</a></h3>
+<h2>Reflection and transmission of waves<a class="headerlink" href="#reflection-and-transmission-of-waves" title="Permalink to this headline">¶</a></h2>
 <p>All waves can get reflected when meeting a boundary, and different things affect how the wave behaves once it has encountered the boundary. For now, we are interested in seeing how the difference between impedance values affect the reflected and transmitted waves.</p>
 <p>We will not focus too much on the derivation of the following expressions, however, especially interested can have a look at this .pdf file [*] as well as the following lectures from UiO’s class in Waves and Oscillations [**].</p>
 <p>In order to get a better understanding of impedance, we can define two boundaries: <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. We will use these to define the impedances of the first boundary, where our wave will be coming from (<span class="math notranslate nohighlight">\(Z_a\)</span>), and <span class="math notranslate nohighlight">\(Z_b\)</span> as the impedance of the second boundary, where our wave is travelling to. We know that our wave has an amplitude that it is travelling with - let us denote it as <span class="math notranslate nohighlight">\(A_i\)</span> (for incoming amplitude). We also know that our wave will either get reflected or transmitted - and we can denote those amplitudes as <span class="math notranslate nohighlight">\(A_r\)</span> and <span class="math notranslate nohighlight">\(A_t\)</span> respectively. The reason why we are interested in defining these amplitudes is because amplitudes are directly related to the energy transported by the wave (recall that intensity is proportional with square of amplitude, <span class="math notranslate nohighlight">\(I \propto A^2 \)</span>, and intensity is simply energy per unit area per unit time). Using this information, we can define</p>
@@ -326,7 +348,7 @@ R = \frac{A_r}{A_i}
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-R = \frac{Z_{a} - Z_{b}}{Z_{a} + Z_{b}}
+R = \frac{Z_{b} - Z_{a}}{Z_{a} + Z_{b}}
 \end{align}
 \]</div>
 <p>which shows us how the reflection coefficient <span class="math notranslate nohighlight">\(R\)</span> is related to the impedances of the boundaries that our wave is travelling through.</p>
@@ -355,24 +377,342 @@ t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
 <p>Thus, we are able to connect the concept of impedance to concept of refractive index and how waves (regardless of their type) behave when they propagate from one media to another.</p>
 <p>Now that we have mathematical expressions ready, we can try to visualise exactly how impedance affects the behaviour of a wave.</p>
 </div>
-<div class="section" id="this-is-where-my-animation-is-going-to-be">
-<h3>this is where my animation is going to be<a class="headerlink" href="#this-is-where-my-animation-is-going-to-be" title="Permalink to this headline">¶</a></h3>
-<p>Hopefully, you were able to move the sliders to change the impedance of the boundaries to see how the wave behaves.</p>
-<ul class="simple">
-<li><p>maybe add some questions here about impedance? or maybe save them for when we are applying it to biological impedance (impedance of different tissues)?</p></li>
-</ul>
+<div class="section" id="this-is-where-my-animation-is-going-to-be-java-script-temp">
+<h2>this is where my animation is going to be java script temp<a class="headerlink" href="#this-is-where-my-animation-is-going-to-be-java-script-temp" title="Permalink to this headline">¶</a></h2>
+<p>Hopefully, you were able to move the sliders to change the impedance of the boundaries to see how the wave behaves. Let us now apply our knowledge to understand the application of theory that we have just gone through.</p>
 </div>
 </div>
 <div class="section" id="impedance-in-ultrasound">
-<h2>Impedance in ultrasound<a class="headerlink" href="#impedance-in-ultrasound" title="Permalink to this headline">¶</a></h2>
-<p>Ultrasound imaging is a widely used practice in medical practice which relies on propagation of sound waves through different tissue. The term “ultrasound” stems from the fact that the sound waves sent through tissue have a frequency ranging between 2.5 and 10 MHz, which is beyond the audible spectrum for humans [1]. The waves that are firstly send through tissue go through series of reflection and transmission, and are then picked up again to create an imagine of the organ that is of interest.</p>
+<h1>Impedance in ultrasound<a class="headerlink" href="#impedance-in-ultrasound" title="Permalink to this headline">¶</a></h1>
+<p>Ultrasound imaging is a widely used practice in medical diagnostics which relies on propagation of sound waves through different tissue. The term “ultrasound” stems from the fact that the sound waves sent through tissue have a frequency ranging between 2.5 and 10 MHz, which is beyond the audible spectrum for humans [1]. The waves that are firstly sent through tissue go through series of reflection and transmission, and are then picked up again to create an imagine of the organ that is of interest.</p>
+<div class="section" id="ultrasound-imaging-and-prenatal-care">
+<h2>Ultrasound imaging and prenatal care<a class="headerlink" href="#ultrasound-imaging-and-prenatal-care" title="Permalink to this headline">¶</a></h2>
+<p>Let us now apply everything that we have learnt so far to understand how ultrasound imaging is used in prenatal care. When an ultrasound pulse travels through the body on its way to the fetus, it has to propagate through multiple surfaces, which have different impedance values. For example, once the sound has travelled through skin (its very first barrier), it will be travelling towards the uterine wall. Once it hits the uterine wall, the signal will keep propagating through the amniotic fluid (fluid surrounding the fetus inside of the uterus), potentially also the placenta, and finally, end up reaching the fetus. But how exactly do we end up getting a clear image of the foster without it being ruined by reflections between the uterine wall and the amniotic fluid? This is an interesting problem since we know that we will be getting as much reflection between the uterine wall and amniotic fluid as we would from the amniotic fluid and the fetus. But why exactly does this not interfere with the image that we get at the end of the procedure?</p>
+<p>In order to answer this question, we will need to understand how the signal behaves when it has to go through multiple barriers, such as with uterine wall, amniotic fluid and the fetus. We will exclude the placenta for now to simplify the situation, and will only focus on three boundaries with those being the uterine wall, amniotic fluid and fetus itself.</p>
+<p>Earlier we had only considered the situation involving two barries with two different impedance values - but this is too simple and is not the only case that we get inside of a human body. In order to understand this better, let us visualise the realistic situation including all of the boundaries that we are interested in [2]:</p>
+<p><img alt="fetus" src="../_images/fetus.jpg" /></p>
+<p>As we can see in the figure above, there are indeed at least four major boundaries that the wave pulse has to penetrate through. Modern ultrasound technology also allows us to look through the fetus and observe its internal organs, but we will be focusing on the most simple example which would simply involve understanding how we are able to obtain the ultrasound imaging without any specific details.</p>
+<p>Let us now send a wave pulse through the body and into the uterus to propagate through. A wave pulse that we are sending is a sum of either sine or cosine waves summed together. The pulse itself has one specific frequency within the ultrasound range (can you recall what it was?). The wave pulse is sent through the body using a tranducer, which generates the ultrasound signal.</p>
+<p>Let us visualise this wave pulse first:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span> 
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span><span class="p">,</span> <span class="n">PillowWriter</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">Button</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span><span class="c1">#creating canvas</span>
+
+<span class="n">x_fixed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1">#creating fixed axis: 1 pulse</span>
+<span class="n">x_fixed2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">#creating fixed axis that are shifted to the left for 2 pulse</span>
+
+<span class="c1">#started = False #for our button</span>
+
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">20</span> <span class="c1">#translating our axis with a certain increment</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">20</span>
+    
+    <span class="c1">#updating the pulse with respect to the new, shifted axis! (first pulse)</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1">#creating the second signal    </span>
+    <span class="n">F2</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixed</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#plotting with respect to the fixed axis </span>
+    <span class="c1">#ax.plot(x_fixed, P, color = &#39;r&#39;)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixed2</span><span class="p">,</span> <span class="n">F2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="c1">#ax.plot(x_fixed2, P2, color = &#39;r&#39;) </span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Illustrating wave pulses generated by a tranducer&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    
+<span class="c1">#creating if statement to pause animation until the button is clicked </span>
+
+    <span class="c1">#if started == False:</span>
+        <span class="c1">#anim.pause()</span>
+        
+<span class="c1">#defining an event which would start the animation when button is activated/clicked on</span>
+<span class="sd">&quot;&quot;&quot;   </span>
+<span class="sd">def startAnimation(event):</span>
+<span class="sd">    global started </span>
+<span class="sd">    started = True </span>
+<span class="sd">    anim.resume()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># axes parameters: left, bottom, width, height</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">placement = plt.axes([0.775, 0.01, 0.125, 0.050])</span>
+<span class="sd">resumeButton = Button(placement, &quot;Start&quot;, color=&#39;r&#39;, hovercolor=&#39;0.975&#39;)</span>
+<span class="sd">resumeButton.on_clicked(startAnimation)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span>  <span class="n">interval</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">85</span><span class="p">,</span> <span class="n">blit</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">repeat</span>  <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">PillowWriter</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  
+<span class="c1">#anim.save(&quot;demo_wavepulse.gif&quot;, writer=writer)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d24ce027c1024b549bfe0cf93e0a417e", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><img alt="SegmentLocal" src="../_images/demo_wavepulse.gif" /></p>
+<p>This is what the pulses could potentially look like. One of those pulses is usually comprised of 2-3 sine or cosine cycle of the same frequency. The length of each pulse tells us about the distance that it travels (more about this later). The time between two pulses (as seen above) is used by the tranducer to wait for the pulse to come back after being reflected off from the body. This time is crucial for ultrasound imaging - more of which we will discuss later on  [3].</p>
+<p>We have chosen an arbitrary frequency here to simply show the shape of the pulse and how it would be propagating with time along the x-axis and its amplitude along the y-axis. We can also try and add the barriers from the figure above [2] with their respective impedance values.</p>
+<p>Before we do so, we might need think of what will happen to the wave pulse conceptually, while applying our existing knowledge about impedance, reflection, transmission and behaviour of waves.</p>
+</div>
+<div class="section" id="ultrasound-properties-of-media">
+<h2>Ultrasound properties of media<a class="headerlink" href="#ultrasound-properties-of-media" title="Permalink to this headline">¶</a></h2>
+<p>Let us firstly have a look at different impedance values and understand what they mean [4]:</p>
+<p><img alt="impedance" src="../_images/impedance_values.png" /></p>
+<p>As we can see, the acoustic impedance is given in terms of a decimal number, which makes it easier to compare the different values. Straight away we can notice how great the difference between acoustic impedance of air and for example water is - this indicates a greater reflection coefficient and a smaller transmission coefficient (can you recall the formulas for <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span> to see how this makes sense?).</p>
+<p>Another important feature to mention here is that the acoustic impedance of soft tissue varies very little compared to for example, the acoustic impedance of air and bone.</p>
+<p>An important feature of ultrasound imaging that we have to understand is what happens to the wave pulse as it travels along the body. As we have established before, the frequency of the pulse is constant, and is chosen before the pulse is sent through the body. In order to extract information about the different organs or other biological tissues that we are interested in, we need to relate physical properties of the wavepulse with physical properties of the body. The physical properties of the body that we are aware of are the impedance values, which, as we can see from the figure above, are quite close in value. One approximation that is made in ultrasound imaging is assuming that the speed of sound is relatively constant throughout the human body (speed of sound through biological tissue is ~1540 m/s, quite close to speed of sound in water, ~1500 m/s).</p>
+<p>In order to understand exactly how we are able to extract information from ultrasound, let us recall the following relationship between frequency, wavelength and speed of the wave:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+c = \lambda f
+\end{align}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is the frequency of the wave, <span class="math notranslate nohighlight">\(c\)</span> is the speed and <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength.</p>
+<p>Since we have established that both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are more or less constant throughout the propagation of the wave pulse, could we somehow use it to extract the neccesary information needed for us to construct the ultrasound images?</p>
+<div class="section" id="guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance">
+<h3>Guiding questions - thinking about the wave pulse and linking it to impedance<a class="headerlink" href="#guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance" title="Permalink to this headline">¶</a></h3>
+<p><strong>1.</strong> Think about the formula connecting wavelength, frequency and speed of the wave. Which other physical property can you relate the wavelength to? Hint: think about its units.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution to question 1</p>
+<p>Distance! The units are the same, and wavelength can be thought of how much the wave propagates to in terms of distance per cycle.</p>
+</div>
+<p><strong>2.</strong> Now that you have established the link between wavelength and distance, think about distance and propagation of waves. What will change if the same wave (with same frequency and speed) is propagating through two different distances? Hint: think about this in terms of classical mechanics: recall the relationship between distance, speed and time.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution to question 2</p>
+<p>Same wave will propagate through different distances with different times, so the greater the distance, the longer it takes for the wave to return to its initial position.</p>
+</div>
+<p><strong>3.</strong> Recall what we have discussed about impedance difference and the different acousic impedance values from Table 1. Why is an ultrasound gel used between the transductor and skin during the procedure? Hint: think about <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution to question 3</p>
+<p>Greater impedance difference means less transmission and more reflection. We use gel to decrease the difference in impedance between air and skin so that most of the pulse goes through the skin.</p>
+</div>
+<p><strong>4.</strong> What would be the result if acoustic impedance of different tissues within our bodies had very different values? Would we be able to get the same sort of images as we do today?</p>
+<div class="toggle admonition">
+<p class="admonition-title">Solution to question 4</p>
+<p>No, since the impedance difference would be too great and there would be more reflection than transmission and we would not be able to see deeper into the human body.</p>
+</div>
+<p>We are now familiar with some of the key facts that are being used in ultrasound imaging to retrieve images. We can now use this to implement more boundaries in order to see what the reflected and transmitted pulses would look like.</p>
+</div>
+</div>
+<div class="section" id="propagation-through-the-human-body">
+<h2>Propagation through the human body<a class="headerlink" href="#propagation-through-the-human-body" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span> 
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span><span class="p">,</span> <span class="n">PillowWriter</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">Button</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span> <span class="c1">#creating canvas</span>
+
+<span class="n">x_fixed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1">#creating fixed axis </span>
+
+<span class="n">x_fix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>   <span class="c1">#creating fixed axis for reflected wave </span>
+
+<span class="n">x_reversed</span> <span class="o">=</span> <span class="n">x_fix</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#reversing axis to plot the wave moving backwards</span>
+
+<span class="c1">#started = False #for our button</span>
+
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="c1">#translating our axis with a certain increment</span>
+    
+    <span class="n">x_back</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="c1">#creating same linspace for the reflected wave, technically not really needed atm</span>
+    
+    <span class="c1">#updating the pulse with respect to the new, shifted axis! (first pulse)</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1">#creating the signal after passing through the boundary (transmitted wave)    </span>
+    <span class="n">F_small</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.8</span>
+    
+    <span class="c1">#creating the signal after passing through the boundary (reflected wave)</span>
+    <span class="n">F_back</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x_back</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.2</span>
+    
+
+    <span class="c1">#updating the animation: original wave pulse moves to the right until frame 39 </span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">39</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixed</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#plotting with respect to the fixed axis </span>
+    <span class="c1">#updating animation so that the transmitted and reflected waves are plotted right after passing through boundary!</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixed</span><span class="p">,</span> <span class="n">F_small</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_reversed</span><span class="p">,</span> <span class="n">F_back</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>    
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;boundary 1&quot;</span><span class="p">)</span> <span class="c1">#vertical line for boundary</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Wave pulse going through the first boundary&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="c1">#creating if statement to pause animation until the button is clicked </span>
+
+    <span class="c1">#if started == False:</span>
+        <span class="c1">#anim.pause()</span>
+        
+<span class="c1">#defining an event which would start the animation when button is activated/clicked on</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">def startAnimation(event):</span>
+<span class="sd">    global started </span>
+<span class="sd">    started = True </span>
+<span class="sd">    anim.resume()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># axes parameters: left, bottom, width, height</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">placement = plt.axes([0.775, 0.01, 0.125, 0.050])</span>
+<span class="sd">resumeButton = Button(placement, &quot;Start&quot;, color=&#39;r&#39;, hovercolor=&#39;0.975&#39;)</span>
+<span class="sd">resumeButton.on_clicked(startAnimation)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span>  <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">68</span><span class="p">,</span> <span class="n">blit</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">repeat</span>  <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">PillowWriter</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  
+<span class="c1">#anim.save(&quot;demo_oneboundary.gif&quot;, writer=writer)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "233a96ceeaa540eeb36493ac86928d77", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><img alt="SegmentLocal" src="../_images/demo_oneboundary.gif" /></p>
+<p>Now that we know how our wave packet would act with one boundary with a certain arbitrary impedance, we can implement more barriers such as skin and uterine wall to observe its behaviour.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span> 
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span><span class="p">,</span> <span class="n">PillowWriter</span>
+<span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="kn">import</span> <span class="n">Button</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span> <span class="c1">#creating canvas</span>
+
+<span class="n">x_fixed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1">#creating fixed axis </span>
+
+<span class="c1">#creating axis for reflected from skin wave pulse</span>
+<span class="n">x_fixS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> 
+<span class="n">x_reversedS</span> <span class="o">=</span> <span class="n">x_fixS</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#reversing to plot reflected wave pulse backwards</span>
+
+<span class="c1">#creating axis for reflected from uterus wave pulse</span>
+<span class="n">x_fixU</span> <span class="o">=</span> <span class="n">x_fixS</span> <span class="o">+</span> <span class="mf">2.2</span> <span class="c1">#shifting the axis to make sure the wave pulses do not collide</span>
+<span class="n">x_reversedU</span> <span class="o">=</span> <span class="n">x_fixU</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">x_U_F</span> <span class="o">=</span> <span class="n">x_fixU</span> <span class="o">+</span> <span class="mf">0.6</span>
+
+<span class="c1">#for our button</span>
+<span class="c1">#started = False </span>
+
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span> 
+    <span class="c1">#creating dynamic axis for propagation of the pulse</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="c1">#translating our axis with a certain increment</span>
+    <span class="n">x_backS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="c1">#translating our axis for reflected wave pulse from skin </span>
+    <span class="n">x_backU</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="c1">#translating our axis for reflected wave pulse from uterus </span>
+    
+    <span class="c1">#creating the signal that we will be sending through skin</span>
+    <span class="c1">#updating the pulse with respect to the new, shifted axis! (first pulse)</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1">#signal reflected from the skin</span>
+    <span class="n">F_skin_back</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x_backS</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.2</span>
+    
+    <span class="c1">#transmitted signal through skin to uterus</span>
+    <span class="n">F_U</span> <span class="o">=</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">F</span> <span class="c1">#setting amplitude sizes</span>
+    
+    <span class="c1">#reflected back from the uterus to transducer</span>
+    <span class="n">F_U_back</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">gausspulse</span><span class="p">(</span><span class="n">x_backU</span><span class="p">,</span> <span class="n">fc</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">retquad</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">retenv</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.24</span>
+    <span class="n">F_U_forward</span> <span class="o">=</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">F</span>
+    
+
+    <span class="c1">#updating the animation - using same method as in code above (for one boundary)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixed</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#plotting with respect to the fixed axis </span>
+        
+    <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">22</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">37</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_reversedS</span><span class="p">,</span> <span class="n">F_skin_back</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fixU</span><span class="p">,</span> <span class="n">F_U</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#keeps propagating through uterus</span>
+        
+    <span class="k">elif</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">37</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">80</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_reversedU</span><span class="p">,</span> <span class="n">F_U_back</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#reflected from uterus back to the transducer</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_U_F</span><span class="p">,</span> <span class="n">F_U_forward</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1">#keeps moving forward from the uterus to the fetus </span>
+    
+    <span class="c1">#creating boundaries</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Skin&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;tan&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Uterine wall&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;indianred&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Wave pulse going through the first boundary&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    
+    <span class="c1">#if started == False:</span>
+        <span class="c1">#anim.pause()</span>
+
+<span class="c1">#defining an event which would start the animation when button is activated/clicked on</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">def startAnimation(event):</span>
+<span class="sd">    global started </span>
+<span class="sd">    started = True </span>
+<span class="sd">    anim.resume()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">#creating the button for starting the animation</span>
+<span class="c1"># axes parameters: left, bottom, width, height</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">placement = plt.axes([0.775, 0.01, 0.125, 0.050])</span>
+<span class="sd">resumeButton = Button(placement, &quot;Start&quot;, color=&#39;r&#39;, hovercolor=&#39;0.975&#39;)</span>
+<span class="sd">resumeButton.on_clicked(startAnimation)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span>  <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blit</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">repeat</span>  <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">PillowWriter</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  
+<span class="c1">#anim.save(&quot;demo_twoboundaries.gif&quot;, writer=writer)</span>
+<span class="c1">#plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "7b06a4e9c063479a95df1de3109f4e27", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><img alt="SegmentLocal" src="../_images/demo_twoboundaries.gif" /></p>
+<p>As you were hopefully able to see from the animation above, most of the initial wave packet was able to propagate through the skin and into the uterine wall without being reflected too much - in order to achieve that, ultrasound technicians use a special gel which has impedance value close to that of skin (recall question 3). That way, most of the way is able to propagate through further into the uterine wall and at the end, all the way to the fetus.</p>
+<p>Since the waves move to different depths, it must mean that they arrive back to the source (transducter) at different times. We see that illustrated when we observe the reflected fraction of the wave pulse coming back to initial position. We also recall the fact that the wave pulses are being sent after each other with a specific time frame - this time frame is used to wait for the previous reflected wave pulse to return back to the transducer.</p>
+<p>From the animations above, you were hopefully able to witness that yourself. We did not illustrate the behaviour of the wave packet as it moves deeper into the body, but since we know that the impedance difference betweem those different tissues is so similar, roughly the same amnount of waves will be reflected back to the trasducer from each boundary. We have also simplified the animation and did not illustrate how the reflected waves would get affected by the skin and uterine wall boundaries on their way back to the tranducer - in theory, they would have lost some energy and their amplitudes would have decreased a little bit as well.</p>
+<p>Now think back to quiding question 2 - can you understand why the reflected waves coming back from the uterine wall and other boundaries will not ruin the image that we get at the end of the ultrasound session? Can you see how the distance travelled by these wave pulses affects the time taken for them to return back to the transducer?</p>
+<p>The answers to the question above lies in the fact that wave pulses travel different distances on their way from the transducer down to the fetus - and even though each wave pulse gets reflected equally from each boundary, they do not interfere with each other on their way back to the transducer as they arrive there at different times. This time is crucial to us - it is being used to calculate how far down the pulse travelled (recall the speed, distance and time relationship), which is then used to create a more dimensional image which shows the depth of each boundary that is being examined. This is possible, as we recall, since we assume the speed of sound to be roughly the same though most tissues in the body (excluding some, such as bones for example).</p>
+</div>
+<div class="section" id="potential-computational-essay-ideas">
+<h2>Potential Computational Essay ideas<a class="headerlink" href="#potential-computational-essay-ideas" title="Permalink to this headline">¶</a></h2>
+<p>Some of the things that we have not discussed here is attenuation - we have explained how the amplitude of ultrasound wave pulses passing through tissue changes in terms of impedance differences, however, there are other factors that affect it. Attenuation refers to phenomenon that describes how intensity and amplitude of those waves (or wave pulses) changes, while also considering scattering and absorption. For example, one could look into the relationship between absorption of different tissues and attenuation coefficient  - and compare the transmitted pulse to the original pulse after this absorption. Read more about it here [5]!</p>
+<p>Another aspect of ultrasound that we have not discussed is the tranducer and how it sends the wave pulses into the body. For example, we have not really discussed the resolution of those pulses, and what affects that. One of the things that can be explored is the width of the transducer and its relation to the resolution of those wave pulses once sent and received back from the body, specifically in terms of the wave pulses’ frequency. Get inspired by reading more about it here [6]!</p>
+</div>
 </div>
 <div class="section" id="references-and-further-readings">
-<h2>References and further readings<a class="headerlink" href="#references-and-further-readings" title="Permalink to this headline">¶</a></h2>
+<h1>References and further readings<a class="headerlink" href="#references-and-further-readings" title="Permalink to this headline">¶</a></h1>
 <p>* <a class="reference external" href="https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf">https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf</a></p>
 <p>** <a class="reference external" href="https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage">https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage</a></p>
+<p>*** <a class="reference external" href="https://wiki.seg.org/wiki/Reflection_coefficients_and_transmission_coefficients">https://wiki.seg.org/wiki/Reflection_coefficients_and_transmission_coefficients</a> (explains the difference in signs for <span class="math notranslate nohighlight">\(R\)</span> for pressure waves vs particle velocity waves)</p>
 <p>[1] <a class="reference external" href="https://thoracickey.com/physical-principles-of-ultrasound-and-generation-of-images/">https://thoracickey.com/physical-principles-of-ultrasound-and-generation-of-images/</a></p>
-</div>
+<p>[2] <a class="reference external" href="https://radiologykey.com/amniotic-fluid-and-fetal-membranes/">https://radiologykey.com/amniotic-fluid-and-fetal-membranes/</a></p>
+<p>[3] <a class="reference external" href="https://courses.lumenlearning.com/physics/chapter/17-7-ultrasound/">https://courses.lumenlearning.com/physics/chapter/17-7-ultrasound/</a></p>
+<p>[4] <a class="reference external" href="https://www.utmb.edu/pedi_ed/adapt/LOs/Regional%20Anesthesia%20Rotation-%20original/page_10.htm">https://www.utmb.edu/pedi_ed/adapt/LOs/Regional Anesthesia Rotation- original/page_10.htm</a></p>
+<p>[5] <a class="reference external" href="https://courses.washington.edu/bioen508/Lecture6-US.pdf">https://courses.washington.edu/bioen508/Lecture6-US.pdf</a></p>
+<p>[6] <a class="reference external" href="https://academic.oup.com/bjaed/article/11/5/186/283004">https://academic.oup.com/bjaed/article/11/5/186/283004</a></p>
 </div>
 
     <script type="text/x-thebe-config">
