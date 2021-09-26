@@ -1,57 +1,78 @@
-let theta = 0;
-let waves = [];
-let radi = 100;
-
-let slider;
-
+let time = 0;
+let wave = [];
+let nSlider;
+let rSlider;
+let speed;
+let button;
 function setup() {
-  createCanvas(1000, 1000);
-  slider = createSlider(1, 50, 1);
+	createCanvas(1000, 600);
+	rSlider = createSlider(50, 100, 50);
+	rSlider.position(50, 550);
+	nSlider = createSlider(1, 25, 1);
+	nSlider.position(200, 550);
+	speed = createSlider(1, 10, 2);
+	speed.position(350, 550);
+	button = createSelect();
+	button.option('sawtooth');
+	button.option('square');
+	button.position(500, 550);
 }
 
 function draw() {
-  background(0);
-  translate(width / 3, height / 2);
+	background(0);
+	text('n', nSlider.x + 50 , nSlider.y - 10);
+	text('Speed', speed.x + 40, speed.y - 10);
+	text('Wave', button.x + 20 , button.y - 10);
+	text('Radius', rSlider.x + 40 , rSlider.y - 10);
+	translate(200, 250);
+	let r;
+	let x = 0;
+	let y = 0;
+	let offset = 400;
 
-  let x = 0;
-  let y = 0;
+	for(let i = 0; i < nSlider.value(); i++){
 
-  for (let i = 0; i < slider.value(); i++) {
+    let prevX = x;
+		let prevY = y;
+		let n;
+		let c;
 
-    let prevx = x;
-    let prevy = y;
+		if(button.value() == 'sawtooth'){
+			if(i % 2 == 0){
+				n = i+1;
+			}
+      else{
+				n = -(i+1);
+			}
+			c = i+1;
+			r = rSlider.value() * (4 / (n * PI));
+		}
+    else {
+			n = i * 2 + 1; c = n;
+			r = rSlider.value() * (4 / (n * PI));
+		}
 
+		x += r * (cos(c * time));
+		y += r * (sin(c * time));
 
-    let n = 2*i + 1;
-    let r = radi * ( 4/(n*PI) );
+		stroke(255);
+		noFill();
+		ellipse(prevX, prevY, r * 2);
 
-    x += r * cos( n*theta );
-    y += r * sin( n*theta );
+		fill(255);
+		line(x, y, prevX, prevY);
+	}
+	wave.unshift(y);
 
+	translate(offset, 0);
+	line(x-offset, y, 0, wave[0]);
+	noFill();
+	beginShape();
+    for(let i = 0; i < wave.length; i++){
+		vertex(i, wave[i]);
+	}
+	endShape();
 
-    if (prevx == 0 && prevy == 0) {noFill(); stroke('white'); ellipse(prevx, prevy, r*2); } else{
-      noFill(); stroke(100); ellipse(prevx, prevy, r*2);
-    }
-    stroke('white'); noFill(); line(prevx,prevy, x,y);
+	if(wave.length > 500) {wave.pop();}
 
-
-  }
-
-  waves.unshift(y);
-
-
-  translate(200, 0);
-
-
-  stroke(255); line(x-200, y, 0, waves[0]);
-
-  beginShape();
-  for(let i = 0; i < waves.length; i++) {
-    vertex(i, waves[i]);
-  }
-  endShape(); if(waves.length > 500) {waves.pop();}
-
-
-
-  theta += 0.01;
-}
+  time += 0.01*speed.value();

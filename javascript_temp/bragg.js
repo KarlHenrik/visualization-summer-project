@@ -1,23 +1,43 @@
 let theta;
 let d;
+let dSlider;
+
+let wc1, wc2, bc, pc;
 
 function setup() {
   createCanvas(500, 500);
+  frameRate(60);
 
   theta = -5*PI/6;
   d = 100;
 
-  initialWave1 = new Wave(20, 50, 'yellow', width/2);
-  initialWave2 = new Wave(20, 50, 'yellow', width/2 - d*sin(theta));
-  scatteredWave1 = new Wave(20, 50, 'red', width/2);
-  scatteredWave2 = new Wave(20, 50, 'red', width/2 - d*sin(theta));
+  dSlider = createSlider(50, 150, 100);
+  dSlider.position(0, 480)
 
-  plan1 = new Plan();
-  plan2 = new Plan();
+
+  wc1 = ('yellow');
+  wc2 = ('red');
+  pc = ('white');
+  bc = [90, 39, 41]
+
+  initialWave1 = new Wave(20, 50, wc1); initialWave1.setStr(width/2);
+  initialWave2 = new Wave(20, 50, wc1); initialWave2.setStr(width/2 + d*sin(-theta));
+  scatteredWave1 = new Wave(20, 50, wc2); scatteredWave1.setStr(width/2);
+  scatteredWave2 = new Wave(20, 50, wc2); scatteredWave2.setStr(width/2 + d*sin(-theta));
+
+  plan1 = new Plan(pc);
+  plan2 = new Plan(pc);
 }
 
 function draw() {
-  background(0);
+  background(bc);
+
+  textSize(15); fill('white'); noStroke(); text('Plane spacing (d)', dSlider.x + 5, dSlider.y - 5)
+
+  d = dSlider.value();
+
+  initialWave2.setStr(width/2 + d*sin(-theta));
+  scatteredWave2.setStr(width/2 + d*sin(-theta));
 
   push();
   plan1.pos(100,200);
@@ -29,11 +49,21 @@ function draw() {
   tegn(plan2, initialWave2, scatteredWave2);
   pop();
 
+  initialWave1.bragg();
+
 }
 
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+    if (theta < -2*PI/3) {theta += PI/12;}
+  }
+  else if (keyCode === DOWN_ARROW) {
+    if (theta < PI) {theta -= PI/12;}
+  }
+}
+
+
 function tegn(plan, bølge1, bølge2) {
-
-
   plan.show();
 
   let x = plan.center[0]; let y = plan.center[1];
@@ -54,36 +84,23 @@ function tegn(plan, bølge1, bølge2) {
   drawWave(bølge2);
   pop();
 
-  print("   " + 2*d*sin(-theta));
-
-
-
-}
-
-function addWaves(wave1, wave2) {
-  let y = [];
-  if (wave1.y.length == wave2.y.length) {
-    for (let i = 0; i < wave1.y.length; i++) {
-      y[i] = wave1.y[i] + wave2.y[i];
-      ellipse(i, y[i], 5);
-    }
-  }
 }
 
 function drawWave(o) {
 
-  o.calc(o.str);
+  o.calc();
   o.update();
   o.show();
 }
 
 
 class Plan {
-  constructor() {
+  constructor(color) {
     this.xpos = 0;
     this.ypos = 0;
     this.str = width/2;
     this.center = [];
+    this.c = color;
   }
 
   pos(x,y) {
@@ -92,7 +109,12 @@ class Plan {
     this.center = [this.xpos + 1/2*this.str, this.ypos];
   }
   show() {
-    noFill(); stroke('blue'); line(this.xpos, this.ypos, this.xpos + this.str, this.ypos);
+    fill(this.c); rect(this.xpos, this.ypos, this.str, 5);
+     for (let i = 25; i < this.str; i+= 50) {
+       fill('brown'); noStroke();
+       ellipse(this.xpos + i, this.ypos + 2, 20);
+     }
+
   }
 
 }
@@ -100,11 +122,11 @@ class Plan {
 
 class Wave {
 
-  constructor(amplitude, period, color, str) {
+  constructor(amplitude, period, color) {
     this.amplitude = amplitude;
     this.period = period;
     this.phase = 0;
-    this.str = str;
+    this.str = 0;
     this.color = color;
 
     this.frequency = 1/this.period;
@@ -114,24 +136,27 @@ class Wave {
     this.y = [];
   }
 
-  calc(str) {
-    for (let i = 0; i < str; i++) {
+  setStr(s){
+    this.str = s;
+  }
+
+  calc() {
+    for (let i = 0; i < this.str; i++) {
        this.y[i] = sin(this.phase + TWO_PI * ( i / this.period ) ) * this.amplitude;
     }
   }
 
   bragg() {
-    for (let i = 0; i < 10; i++) {
-      if (i*this.lambda == 2*d*sin(-theta));
-      textSize(25); text('Bragg', 200, 300);
-    }
+    let a = round(2*d*sin(-theta))
+    let b = this.lambda;
+    textSize(30); fill(255); text("n(lambda) = n*" +  b, 200, 400);
+    textSize(30); fill(255); text("2dsin(theta) = " + a, 200, 450);
   }
 
   show() {
-    for (let i = 0; i < this.y.length; i+= 5) {
-      noStroke();
-      fill(this.color);
-      ellipse(i, this.y[i], 5);
+    for (let i = 0; i < this.str; i+= 4) {
+      fill(this.color); noStroke();
+      ellipse(i, this.y[i], 6);
     }
   }
 
