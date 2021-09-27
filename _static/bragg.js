@@ -56,11 +56,11 @@ p.draw = function() {
 
 }
 
-function keyPressed() {
-  if (p.keyCode === p.UP_ARROW) {
+p.keyPressed = function() {
+  if (p.key === "w") {
     if (theta < -2*p.PI/3) {theta += p.PI/12;}
   }
-  else if (p.keyCode === p.DOWN_ARROW) {
+  else if (p.key === "s") {
     if (theta < p.PI) {theta -= p.PI/12;}
   }
 }

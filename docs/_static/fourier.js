@@ -33,28 +33,24 @@ p.draw = function() {
     let y = 0;
     let offset = 200;
 
-    for(let i = 0; i < nSlider.value(); i++){
-
-    let prevX = x;
+    for(let i = 0; i < nSlider.value(); i++) {
+        let prevX = x;
         let prevY = y;
         let n;
         let c;
 
-        if(button.value() == 'sawtooth'){
-            if(i % 2 == 0){
+        if(button.value() == 'sawtooth') {
+            if(i % 2 == 0) {
                 n = i+1;
-            }
-      else{
+            } else {
                 n = -(i+1);
             }
             c = i+1;
             r = rSlider.value() * (4 / (n * p.PI));
-        }
-    else {
+        } else {
             n = i * 2 + 1; c = n;
             r = rSlider.value() * (4 / (n * p.PI));
         }
-
         x += r * (p.cos(c * time));
         y += r * (p.sin(c * time));
 
@@ -78,7 +74,7 @@ p.draw = function() {
 
     if(wave.length > 500) {wave.pop();}
 
-  time += 0.01*speed.value();
+    time += 0.01*speed.value();
 }
     
 }
