@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materials science and Bragg’s law by Animation and Visualization &#8212; Visualizations and Exercises</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/bragg.js"></script>
+    <script src="../_static/energy.js"></script>
+    <script src="../_static/fourier.js"></script>
+    <script src="../_static/impedance.js"></script>
+    <script src="../_static/initialize.js"></script>
+    <script src="../_static/oberthdemo.js"></script>
+    <script src="../_static/orbit.js"></script>
+    <script src="../_static/p5.min.js"></script>
+    <script src="../_static/starfield.js"></script>
+    <script src="../_static/superpos.js"></script>
+    <script src="../_static/vectors.js"></script>
+    <script src="../_static/.ipynb_checkpoints/bragg-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/energy-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/fourier-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/impedance-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/initialize-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/oberthdemo-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/orbit-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/starfield-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/superpos-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/vectors-checkpoint.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fourier series" href="Fourier.html" />
+    <link rel="prev" title="Oberth effect" href="Oberth.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualizations and Exercises</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="EscapeVelocity.html">
+   Escape Velocity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Impedance.html">
+   Impedance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oberth.html">
+   Oberth effect
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Materials science and Bragg’s law by Animation and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier.html">
+   Fourier series
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Demos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Orbit.html">
+   Orbit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Vectors.html">
+   Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Demos/Starfield.html">
+   Starfield
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Extra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HowTo.html">
+   How to make this website
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Bragg.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crystal-structure">
+   Crystal structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#superposition-of-waves">
+   Superposition of waves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bragg-s-law">
+   Bragg’s law
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-bragg-s-law">
+   What is Bragg’s law?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bragg-s-law-from-a-geometric-perspective">
+   Bragg’s law from a geometric perspective.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application">
+   Application
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="materials-science-and-bragg-s-law-by-animation-and-visualization">
+<h1>Materials science and Bragg’s law by Animation and Visualization<a class="headerlink" href="#materials-science-and-bragg-s-law-by-animation-and-visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Be able to discuss and relate the different components that make up Bragg’s diffraction law and how they impact an XRD-dataset.</p></li>
+<li><p>Sketch how Bragg’s law can be derived from simple geometric features</p></li>
+<li><p>Explain and recall simple terms related to the crystal structure of a material.</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this “book” we will explore some central concepts of materials science and experimental methods that are commonly used. The key takeway from this will hopefully be how complex models and physical laws can be shown to be derivatives of simple mathermatic properites, specifilcly vector operations and gemometry. Hopefully you might remember some terms from materials science and how they are studied experimentaly.</p>
+</div>
+<div class="section" id="crystal-structure">
+<h2>Crystal structure<a class="headerlink" href="#crystal-structure" title="Permalink to this headline">¶</a></h2>
+<p>To begin with, lets take a look at two essential terms of materials science, namley the <strong>supercell</strong> and its corresponding <strong>unit cell</strong>. (Shown in figure 1)</p>
+<p><img alt="Unit cell" src="../_images/unitCell.png" /></p>
+<p>Figure 1: An illustration of a typical unit cell of a periodic supercell</p>
+<p>This representation of crystal structures treats atomic ordering as an infinite periodic arrays of discrete points, and is known as a <strong>Bravais lattice</strong>. In 3D, there are 14 induvidual classes, one of which is the “primitive cell”, shown above(right). Common for all unit cells is that they represent the smallest possible ordering to capture the perodicity of the larger supercell, and hence is made up of three angles <span class="math notranslate nohighlight">\(\alpha, \beta, \gamma\)</span>, and three unit axes <span class="math notranslate nohighlight">\(a, b, c\)</span>, poiting to various spheres called <strong>lattice points</strong>. In cubic unit cells, for instance a face centered cubic lattice (figure 2), a = b = c, and <span class="math notranslate nohighlight">\(\alpha = \beta = \gamma = 90^\circ\)</span>. But this is not nescaccarly the case for other structures, such as a hexagonal or triclinic bravais lattices.</p>
+<p>From figure 1 we can see that every lattice point can be described by the unit axes a, b, c. For instance the corner points in the bottom plane in the unit cell is located at:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec{r_1} = 1*\vec{a} + 0*\vec{b} + 0*\vec{c} \\
+\vec{r_2} = 0*\vec{a} + 1*\vec{b} + 0*\vec{c} \\
+\vec{r_3} = 1*\vec{a} + 1*\vec{b} + 0*\vec{c}
+\end{split}\]</div>
+<p>, if <span class="math notranslate nohighlight">\(\vec{r}\)</span> is a vector pointing from origo (0,0,0) to the lattice point. In general we say that each lattice point in the supercell can be desribed by integers u, v, w and the unit axes a,b, c as <span class="math notranslate nohighlight">\(\vec{r} = u\cdot \vec{a} + v\cdot \vec{b} + w\cdot \vec{c}\)</span>.
+This term lattice point can in theory represent an atom, but it can also represent a collection of atoms or a molecule. One feature to make note of is that beacouse of the symmetry of the supercell, every induvidual lattice point will only equal a fraction of said atom/molecule as the same point is shared between neigboring cells (See figure 1 and study the amount of cells that share one point). For example, a corner point in a bravais lattice is shared by eight cells, therefore a corner latice point is equal to 1/8 atom/molecule.</p>
+<blockquote>
+<div><p><strong>Look at figure 2, can you describe the points at the midway point in this cell in an eqvivalent manner to that above?</strong></p>
+<p><strong>What is the volume of an FCC lattice in terms of a?</strong></p>
+<p><strong>How many atoms/molecules does an FCC unit cell contain?</strong></p>
+</div></blockquote>
+<p><img alt="FCC-lattice" src="../_images/fcc_lattice.jpeg" /></p>
+<p>Figure 2: A very common crystal structure called an FCC lattice, this lattice is the prefereed arrangement of many materials, examples are NaCl, Dimond and Aluminum.</p>
+<p>The planes of atom in a lattice is commonnly reffered to as <strong>crystal planes</strong> or hkl planes due to their particular notation {hkl}. For instance, in figure 2 we note that the top plane is denoted {001} as it cuts the c axis, and is parallel to the a, and b direction. A very important parameter related to the idea of crystal planes is the quantity plane distance (or seperation), and it represent the distance from a plane to the next identical plane. In this example, as the next plane of atoms equal to the top plane, is the bottom plane. The plane distance is equal to the size of the c-axis.</p>
+<p>See <a class="reference external" href="https://en.wikipedia.org/wiki/Miller_index">Miller index and crystal planes</a> for more information on crystal planes, and to see examples of the most common ones.</p>
+</div>
+<div class="section" id="superposition-of-waves">
+<h2>Superposition of waves<a class="headerlink" href="#superposition-of-waves" title="Permalink to this headline">¶</a></h2>
+<p>Before moving on, lets take a quik look at some important properties of wavetheory. Waves being a linear system, satisfy the superposition principle that in short expalins the form of an addidative wave from two initial waves that traverese thes same space. The resultant wave is formed by the the sum of the amplitudes from the intial waves. This can result in whats known as either constructive or destructive interference.</p>
+<blockquote>
+<div><p>Try adjusting the variables in the animation bellow and see if you can achive complete destructive/constructive interference.</p>
+</div></blockquote>
+<article id="superposviz" style="position: relative;"></article>
+<p>From this animation example, the main takeawy should be to remember that completly constructive interfernc eoccurs between two waves if their phase is an integer times <span class="math notranslate nohighlight">\( \pi \)</span> , and opposite completly destructive when <span class="math notranslate nohighlight">\( \pi /2 \)</span> phase shifted.</p>
+</div>
+<div class="section" id="bragg-s-law">
+<h2>Bragg’s law<a class="headerlink" href="#bragg-s-law" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="what-is-bragg-s-law">
+<h2>What is Bragg’s law?<a class="headerlink" href="#what-is-bragg-s-law" title="Permalink to this headline">¶</a></h2>
+<p>Bragg’s law is a widley applied law in physics that is used to examine various crystallographic properties. Some of the various instrumentations and appliences of Bragg’s law will be discussed briefly at the end. However the instrumentation, the central working method is Bragg’s law. When two in-phase waves strike crystallographic planes seperated by a distance d, the Bragg condition states the relation between the incident and outgoing waves for the scattered rays to remain in-phase, thus creating constructive interference. The defintion is:</p>
+<div class="math notranslate nohighlight">
+\[
+n \lambda = 2dsin(\theta)
+\]</div>
+<p>Thus, per defition the product of the waves incident angle <span class="math notranslate nohighlight">\(\theta\)</span> on the crystal planes and the distance between planes, must equal an integer times the incident wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>.
+But what does this mean?</p>
+<blockquote>
+<div><p>Play around with the animation below and try and figure out how the value of d and \theta are related
+to eachother by studying the outgoing waves.</p>
+</div></blockquote>
+<p>The animation below is an attempt to illustrate the geometric relation that makes up the Bragg conditon. You should try increasing/decreasing the incident angle by pressing the arrow keys, and also alter the plane seperation d through the slider. And it should be apperant when the condition yields constructive and destructive interference.</p>
+<article id="braggviz" style="position: relative;"></article>
+</div>
+<div class="section" id="bragg-s-law-from-a-geometric-perspective">
+<h2>Bragg’s law from a geometric perspective.<a class="headerlink" href="#bragg-s-law-from-a-geometric-perspective" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Bragg's law" src="../_images/bragg-1.jpg" /></p>
+<p>Figure 3: A schematic view of the geometric values of the Bragg condition.</p>
+<p>With the aid of figure 3, it can be shown that Bragg’s law come to fruition simply from considering the geometry. In figure 3, if we let the distance F-G-H denote the additional path of wave 2 compared to wave 1, its clear that this distance must exactly equal an integer times the wavelength for the two scattered waves to be in phase.</p>
+<blockquote>
+<div><p><strong>Find an expression for the distance G-H in terms of d and <span class="math notranslate nohighlight">\(\theta\)</span></strong></p>
+</div></blockquote>
+<p>From the figure its apperant that G-H must equal G-F, therefore the total path F-G-H is equal to <span class="math notranslate nohighlight">\( 2dsin\theta \)</span>, thus we have derived the Bragg condition <span class="math notranslate nohighlight">\(2dsin\theta = n\lambda\)</span>.</p>
+</div>
+<div class="section" id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<p>Why are we at all interested in Bragg’s law? Despite the fun trigonomety and vector excercies of course! Well, it just so happens that its an extremly important law of physics that is applied to study materials. The most common methods of examining materials today via spectroscopy is through methods such as X-ray diffraction or electron spectrocopy. And yes you guessed it, both of those rely heavily on Bragg diffraction. Lets first take a look at XRD and its use. In an XRD instrument, a sample, traditionally of powder, is being examined by monochromatic X-ray beams, most comonly <span class="math notranslate nohighlight">\(\kappa \alpha_1\)</span> of either Cu or Mg. The main concept of this instrumentation is the rotation of the sample, when rotating the sample, according to Bragg’s law certain crystal planes gives rise to constructive interference that is registred at the sensor, along the value of <span class="math notranslate nohighlight">\(\theta\)</span>. From this, one can consruct and X-ray diffractogram of the sample as the one shown for Si bellow (Figure 4). From this one can relate the different values of <span class="math notranslate nohighlight">\(\theta\)</span> and intensites throguh bragg’s law to obtain information about the crystal structure of the sample. There is also possibilty to do qualitative and quantative analyisis of the sample from data in the diffractogram.</p>
+<p><img alt="XRD" src="../_images/xrd.png" /></p>
+<p>An XRD spectrum of Si.</p>
+<p><img alt="SAD" src="../_images/SAD.jpg" /> <img alt="TEM" src="../_images/TEM.jpg" /></p>
+<p>A Selected Area Diffraction (SAD) image of a single crystal, and a TEM image of a polycrystalline sample</p>
+<p>As mentioned above, in addition to X-ray diffraction, electron diffraction, specifly the Transmission Electron Microscopy (TEM) is a widley used instrument in materials science. In a TEM study, the sample must be very thin in order for the incomming beam of high-energy electrons to pass through the sample. Bellow is typpical TEM diffraction images of a single crystal and a polycrystaline specimen called SAD, or selected area diffraction images. The feature to take note of here is that a single crystal shows diffraction spots, while a polycrystal displays diffraction rings. In the single crystal, the spots each represent a crystal plane, while the rings each represent a set of planes with equal plane spacing.</p>
+<p><strong>Question: Why is the diffraction pattern different for single crystals and polycrystaline specimens?</strong></p>
+<p><strong>Question: The zone axis is a term related to the direction the electronbeam traverse through the crystal, and all diffraction planes in the SAD are orthogonal to this direction. What is the zone axis for the SAD image in figure 5?</strong></p>
+<p><img alt="Zone axis 1" src="../_images/zone1.jpg" /> <img alt="Zone axis 2" src="../_images/zone2.jpg" /></p>
+<p>Figure 5: SAD patterns for two different zone axises</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Oberth.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Oberth effect</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Fourier.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Fourier series</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

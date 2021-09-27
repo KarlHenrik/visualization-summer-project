@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escape Velocity &#8212; Visualizations and Exercises</title>
+    <title>Fourier series &#8212; Visualizations and Exercises</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -75,8 +75,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Impedance" href="Impedance.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="next" title="Orbit" href="Demos/Orbit.html" />
+    <link rel="prev" title="Materials science and Bragg’s law by Animation and Visualization" href="Bragg.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -117,8 +117,8 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="EscapeVelocity.html">
    Escape Velocity
   </a>
  </li>
@@ -137,8 +137,8 @@
    Materials science and Bragg’s law by Animation and Visualization
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Fourier.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Fourier series
   </a>
  </li>
@@ -213,7 +213,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/EscapeVelocity.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/Fourier.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -244,20 +244,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leaving-earth">
-   Leaving Earth
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning outcomes
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leaving-the-solar-system">
-   Leaving the Solar System
+  <a class="reference internal nav-link" href="#what-is-a-fourier-series">
+   What is a Fourier series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#animation">
+   Animation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application">
+   Application
   </a>
  </li>
 </ul>
@@ -271,65 +274,54 @@
         
               <div>
                 
-  <div class="section" id="escape-velocity">
-<h1>Escape Velocity<a class="headerlink" href="#escape-velocity" title="Permalink to this headline">¶</a></h1>
-<p>Say you wanted to get to Proxima Centauri, the star closest to our own.</p>
-<p><img alt="Proxima Centauri" src="../_images/proxima.jpg" /></p>
-<p>It’s 4.2465 light-years away, or about 40,208,000,000,000 km. That’s pretty far, but you said nothing about getting there <em>soon</em>, so it shouldn’t be that hard.</p>
-<div class="section" id="leaving-earth">
-<h2>Leaving Earth<a class="headerlink" href="#leaving-earth" title="Permalink to this headline">¶</a></h2>
-<p>The first problem you’d face is leaving the Earth. We will ignore air resistance, and how to gain speed, and simply assume you start fully sped up. How much speed would you need to leave the Earth for good?</p>
-<p>The real problem is the Earths gravity. It pulls you towards it with a force <span class="math notranslate nohighlight">\(F\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-F = \frac{G m_1 m_2}{r^2}
-\end{aligned}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, <span class="math notranslate nohighlight">\(m_1\)</span> is the mass of the Earth, <span class="math notranslate nohighlight">\(m_2\)</span> is your mass, and <span class="math notranslate nohighlight">\(r\)</span> is the distance from you to the center of the Earth.</p>
-<p>The first key insight here is that as you go further away from the Earth, the force of gravity approaches zero. This means that you don’t need to fight gravity forever to escape it, you only need to get far enough away with a little speed left over, that way gravity will effectively dissipate. What goes up mustn’t come down.</p>
-<p>The second key insight is that when you’re only being affected by gravity, you’re either speeding up and moving down, or slowing down and moving up. It just so happens that these two behaviours are in perfect balance, the kinetic energy you lose when slowing down while moving up is gained as gravitational potential energy. And when you move closer to the Earth and speed up, your gravitational potential energy is being turned back into kinetic energy.</p>
-<p>Kinetic energy is the energy associated the the movement of an object with mass <span class="math notranslate nohighlight">\(m\)</span> and velocity <span class="math notranslate nohighlight">\(v\)</span>, and is given by</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-E_K = \frac{1}{2}mv^2
-\end{aligned}
-\]</div>
-<p>The interactive window below shows the value of kinetic energy and gravitational potential energy when moving in a gravitational field.</p>
-<article id="energy_canvas"></article><p>The interactive window above showed how with enough initial kinetic energy you can escape gravity, but just how much do you need? We can find this by calculating the amount of <strong>work</strong> gravity does from your starting distance <span class="math notranslate nohighlight">\(r_0\)</span> into infinity. Energy that is “taken” or “given” by a force is given by the amount of work. Work is equal to force times distance, but since the force of gravity changes with distance, we need to integrate the force over the distance instead:</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-W_G = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr
-\end{aligned}
-\]</div>
-<div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> How does your kinetic energy change with distance when you’re very far away from Earth? What about when you’re very close?</p>
-<p><strong>b)</strong> Does the total energy change at all? Why?</p>
-<p><strong>c)</strong> Calculate the integral to find the initial kinetic energy you need to escape the Earths gravity.</p>
-<p><strong>d)</strong> Find the initial velocity you need to escape the Earths gravity.</p>
-<p><strong>e)</strong> If you started falling towards the Earth from infinitely far away (with no velocity), how fast would you be going when you hit the ground? What if you started falling from 1000 km away?</p>
-<p><strong>f)</strong> Below is an interavtive window that lets you choose your starting direction when leaving Earth. What initial velocity would you need to escape the Earths gravity if you started at a 45<span class="math notranslate nohighlight">\(^\circ\)</span> angle?</p>
-<p>Useful values: <span class="math notranslate nohighlight">\(G = 6.674*10^{-11}m^3kg^{–1}s^{–2}\)</span>, <span class="math notranslate nohighlight">\(m_1 = 5.972*10^{24}kg\)</span>, <span class="math notranslate nohighlight">\(r_0 = 6.371*10^6 m\)</span> (the radius of the Earth).</p>
-<div class="toggle admonition">
-<p class="admonition-title">Solution</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{aligned}
-E_K = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr = \left[-\frac{G m_1 m_2}{r}\right]_{r_0}^{\infty} = 0 + \frac{G m_1 m_2}{r_0} = \frac{G m_1 m_2}{r_0}
-\end{aligned}
-\]</div>
-<p>This is how much kinetic energy gravity can “take”, and if you start with more kinetic energy than this, gravity will never be able to stop you. Proxima Centauri better get ready!*</p>
-<p>TODO</p>
+  <div class="section" id="fourier-series">
+<h1>Fourier series<a class="headerlink" href="#fourier-series" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Interpret the mathcematical defintion of a fourier series in terms of circles</p></li>
+<li><p>Conduct a fourier series of a square wave in terms of sinusidal functions</p></li>
+<li><p>Remember the key factors in a Fourier series and some of its possible applications</p></li>
+</ul>
 </div>
-<p>————-[Interactive where you choose the starting angle and see how you fly. The point is that starting angle doesen’t matter, as long as you’re moving away from the Earth with enough kinetic energy. You can also choose to go slow to enter orbit or crash into the Earth, depending on how steep the angle is.]———-</p>
-<p><img alt="Angle Interactive Placeholder" src="../_images/angle.jpg" /></p>
+<div class="section" id="what-is-a-fourier-series">
+<h2>What is a Fourier series<a class="headerlink" href="#what-is-a-fourier-series" title="Permalink to this headline">¶</a></h2>
+<p>Fourier series was devolped by Joseph Fourier in the early 1800’s as a way of simplifying a specific differential equation, namley the heat equation to be discussed later. The way Fourier was able to this was to imply the ortogonality principle of cosine and sine function and expand a given periodic function f(x) as an infinite sum of trigonometric functions
+$<span class="math notranslate nohighlight">\(
+f(x) = a_0 + a_1cos(x) + a_2cos(2x) + a_3cos(3x) + ... \\
+        +  b_1sin(x) + b_2sin(2x) + b_3(sin3x) + ...
+\)</span>$</p>
+<p>A similar method for non-periodic functions does exist, and is called a Fourier transformation. The main idea of the Fourier series was to solve all the simple induvidual terms and by sumation end up at the complete function given enough terms. The generel form of Fourier series is defined by the expression bellow.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty}a_k cos\frac{2\pi kx}{T} + \sum_{k=1}^{\infty}b_k sin\frac{2\pi kx}{T},  
+\]</div>
+<p>the, coeficient <span class="math notranslate nohighlight">\(a_k\)</span> and <span class="math notranslate nohighlight">\(b_k\)</span> are given by</p>
+<div class="math notranslate nohighlight">
+\[
+a_k = \frac{2}{T} \int_{0}^{T}f(x)cos\frac{2\pi kx}{T}, b_k = \frac{2}{T} \int_{0}^{T}f(x)sin\frac{2\pi kx}{T}
+\]</div>
+<p>In this example we will look at the very simple case of applying a Fourier series on a square wave, as illustrated in fiugre (1). A square wave is a nonsinusidal periodic function that instantaneus goes from a maximum to a minimum value. The wave in this exampple is described as f(x) = 1 when <span class="math notranslate nohighlight">\(x\in [0,1/2]\)</span> and f(x) = -1 when <span class="math notranslate nohighlight">\(x\in[1, 1/2]\)</span>.</p>
+<p><img alt="Square Wave" src="../_images/squareWave.png" /></p>
+<p>Figure 1: A square wave</p>
+<blockquote>
+<div><p>In a period T = 1, calcualte the Fourier series of the square wave f(x). (Hint: Use that the function is odd and symmetric around 0 so that you only have to calculate one of the coefficients.)</p>
+<p>Answer: <span class="math notranslate nohighlight">\(f(x) = \frac{4}{pi} \sum_{k=1,3,5....}^{\infty} \frac{1}{k}sin(2\pi kx)\)</span></p>
+</div></blockquote>
 </div>
-</div>
-<div class="section" id="leaving-the-solar-system">
-<h2>Leaving the Solar System<a class="headerlink" href="#leaving-the-solar-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="animation">
+<h2>Animation<a class="headerlink" href="#animation" title="Permalink to this headline">¶</a></h2>
+<p>In the animation bellow, the idea is to for you to interact with a live fourier series of a square or sawtooth wave. The animation begins with mapping the cosine and sine values along the circumsphere of a single circle. Let then the slider named n represent the amount of harmonics, adding on sine waves, or visualized as adding circles on top of each other. You will make note of how the resultant wave will take shape after a typical square/sawtooth-wave as the number increases.</p>
+<article id="fourierviz" style="position: relative;"></article></div>
+<div class="section" id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<p>The applications of fourier series is immense. The method Joseph Fourier devoted to solving the Heat equation has become an invaluable tool in mathematical derivations with great real world relation. Lets first look at the heat equation, by using the notation of the laplacian operator for the derivative, the heat equation can be described by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dT}{dt} = -\alpha \nabla^2T = 0,
+\]</div>
+<p>, given that the eigenvectors of the laplacian <span class="math notranslate nohighlight">\(\nabla^2\)</span> is described by cosine and sine functions in one dimension, Fourier was able to solve this equation by employing a Fourier series. In higher dimensional problems involving the Laplace operator, one must apply a complex derivative of the Fourier series called spherrical harmonics, but still the fundamental theory applies.</p>
+<p>In signal proscessing, like that of sound waves, a common method called Fourier analysis consist of decomposing a function into components based on oscillatory properties such as frequencies. And the reverese process is called a Fourier synthesis. Going along with the theme of signal processing, one real world application of a Fourier series is in a MP3 player. The property of Fourier series that make this escpecially intersting and usefull is the fast convergence. As stated in the introduction, almost any wave can be rewritten to an infinite sum of sine waves, howeber, as you propably observed from the animation is that it doesnt requiere alot of terms for the approximation becomes very accurate. In an MP3 player, a Fourier series can be used to remember a particular sound by expansion of infinite term, but given the fast convergence and the fact that the human ear isnt to precise, one can neglect the latter terms as the differnce in precision is neglible. Hence, a sound can be stored alot more memoryeconomic due to Fourier series.</p>
 </div>
 </div>
 
@@ -363,19 +355,19 @@ E_K = \int_{r_0}^{\infty} F dr = \int_{r_0}^{\infty} \frac{G m_1 m_2}{r^2} dr = 
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../intro.html" title="previous page">
+        <a class="left-prev" href="Bragg.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Introduction</p>
+                <p class="prevnext-title">Materials science and Bragg’s law by Animation and Visualization</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Impedance.html" title="next page">
+        <a class="right-next" href="Demos/Orbit.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Impedance</p>
+                <p class="prevnext-title">Orbit</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -41,27 +41,41 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/bragg.js"></script>
     <script src="../_static/energy.js"></script>
+    <script src="../_static/fourier.js"></script>
+    <script src="../_static/impedance.js"></script>
     <script src="../_static/initialize.js"></script>
     <script src="../_static/oberthdemo.js"></script>
     <script src="../_static/orbit.js"></script>
     <script src="../_static/p5.min.js"></script>
     <script src="../_static/starfield.js"></script>
+    <script src="../_static/superpos.js"></script>
     <script src="../_static/vectors.js"></script>
+    <script src="../_static/.ipynb_checkpoints/bragg-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/energy-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/fourier-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/impedance-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/initialize-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/oberthdemo-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/orbit-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/starfield-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/superpos-checkpoint.js"></script>
+    <script src="../_static/.ipynb_checkpoints/vectors-checkpoint.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Oberth Effect" href="OberthDemo.html" />
+    <link rel="next" title="Oberth effect" href="Oberth.html" />
     <link rel="prev" title="Escape Velocity" href="EscapeVelocity.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -88,7 +102,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -114,8 +128,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="OberthDemo.html">
-   The Oberth Effect
+  <a class="reference internal" href="Oberth.html">
+   Oberth effect
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bragg.html">
+   Materials science and Bragg’s law by Animation and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Fourier.html">
+   Fourier series
   </a>
  </li>
 </ul>
@@ -217,77 +241,67 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Impedance
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
    <em>
     Learning objectives:
    </em>
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-impedance">
    What is impedance?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explaining-characteristic-acoustic-impedance">
      Explaining characteristic acoustic impedance
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reflection-and-transmission-of-waves">
      Reflection and transmission of waves
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#this-is-where-my-animation-is-going-to-be-java-script-temp">
-     this is where my animation is going to be java script temp
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#impedance-in-ultrasound">
    Impedance in ultrasound
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ultrasound-imaging-and-prenatal-care">
      Ultrasound imaging and prenatal care
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ultrasound-properties-of-media">
      Ultrasound properties of media
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance">
        Guiding questions - thinking about the wave pulse and linking it to impedance
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#propagation-through-the-human-body">
      Propagation through the human body
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#potential-computational-essay-ideas">
      Potential Computational Essay ideas
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references-and-further-readings">
    References and further readings
   </a>
@@ -305,9 +319,8 @@
                 
   <div class="section" id="impedance">
 <h1>Impedance<a class="headerlink" href="#impedance" title="Permalink to this headline">¶</a></h1>
-</div>
 <div class="section" id="learning-objectives">
-<h1><em>Learning objectives:</em><a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h1>
+<h2><em>Learning objectives:</em><a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Explain what acoustic impedance is in terms of density and speed of medium</p></li>
 <li><p>Explore reflection and transmission coefficients physically and mathematically (using visualisation and the slider); what they do to a travelling wave; thinking about energies of waves in terms of reflection and transmission</p></li>
@@ -320,9 +333,9 @@
 </ul>
 </div>
 <div class="section" id="what-is-impedance">
-<h1>What is impedance?<a class="headerlink" href="#what-is-impedance" title="Permalink to this headline">¶</a></h1>
+<h2>What is impedance?<a class="headerlink" href="#what-is-impedance" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="explaining-characteristic-acoustic-impedance">
-<h2>Explaining characteristic acoustic impedance<a class="headerlink" href="#explaining-characteristic-acoustic-impedance" title="Permalink to this headline">¶</a></h2>
+<h3>Explaining characteristic acoustic impedance<a class="headerlink" href="#explaining-characteristic-acoustic-impedance" title="Permalink to this headline">¶</a></h3>
 <p>The acoustic impedance (Z) of a medium is dependent on the density of medium <span class="math notranslate nohighlight">\(\left(\rho \left[\frac{kg}{m^3}\right]\right)\)</span> and the speed of sound through this medium <span class="math notranslate nohighlight">\(\left(c \left[\frac{m}{s}\right]\right)\)</span> , given as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -334,7 +347,7 @@ Z = \rho c
 <p>When waves are propagating through media with difference impedance, a fraction of those waves is either transmitted or reflected. The <em>difference</em> in impedance is what helps us identify how much of the wave is trasmitted or reflected. We will explore what it means more visually in other sections.</p>
 </div>
 <div class="section" id="reflection-and-transmission-of-waves">
-<h2>Reflection and transmission of waves<a class="headerlink" href="#reflection-and-transmission-of-waves" title="Permalink to this headline">¶</a></h2>
+<h3>Reflection and transmission of waves<a class="headerlink" href="#reflection-and-transmission-of-waves" title="Permalink to this headline">¶</a></h3>
 <p>All waves can get reflected when meeting a boundary, and different things affect how the wave behaves once it has encountered the boundary. For now, we are interested in seeing how the difference between impedance values affect the reflected and transmitted waves.</p>
 <p>We will not focus too much on the derivation of the following expressions, however, especially interested can have a look at this .pdf file [*] as well as the following lectures from UiO’s class in Waves and Oscillations [**].</p>
 <p>In order to get a better understanding of impedance, we can define two boundaries: <span class="math notranslate nohighlight">\(Z_a\)</span> and <span class="math notranslate nohighlight">\(Z_b\)</span>. We will use these to define the impedances of the first boundary, where our wave will be coming from (<span class="math notranslate nohighlight">\(Z_a\)</span>), and <span class="math notranslate nohighlight">\(Z_b\)</span> as the impedance of the second boundary, where our wave is travelling to. We know that our wave has an amplitude that it is travelling with - let us denote it as <span class="math notranslate nohighlight">\(A_i\)</span> (for incoming amplitude). We also know that our wave will either get reflected or transmitted - and we can denote those amplitudes as <span class="math notranslate nohighlight">\(A_r\)</span> and <span class="math notranslate nohighlight">\(A_t\)</span> respectively. The reason why we are interested in defining these amplitudes is because amplitudes are directly related to the energy transported by the wave (recall that intensity is proportional with square of amplitude, <span class="math notranslate nohighlight">\(I \propto A^2 \)</span>, and intensity is simply energy per unit area per unit time). Using this information, we can define</p>
@@ -376,17 +389,15 @@ t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
 <p>where <span class="math notranslate nohighlight">\(t\)</span> is the transmission coefficient analagous to <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>Thus, we are able to connect the concept of impedance to concept of refractive index and how waves (regardless of their type) behave when they propagate from one media to another.</p>
 <p>Now that we have mathematical expressions ready, we can try to visualise exactly how impedance affects the behaviour of a wave.</p>
-</div>
-<div class="section" id="this-is-where-my-animation-is-going-to-be-java-script-temp">
-<h2>this is where my animation is going to be java script temp<a class="headerlink" href="#this-is-where-my-animation-is-going-to-be-java-script-temp" title="Permalink to this headline">¶</a></h2>
+<article id="impedanceviz"></article>
 <p>Hopefully, you were able to move the sliders to change the impedance of the boundaries to see how the wave behaves. Let us now apply our knowledge to understand the application of theory that we have just gone through.</p>
 </div>
 </div>
 <div class="section" id="impedance-in-ultrasound">
-<h1>Impedance in ultrasound<a class="headerlink" href="#impedance-in-ultrasound" title="Permalink to this headline">¶</a></h1>
+<h2>Impedance in ultrasound<a class="headerlink" href="#impedance-in-ultrasound" title="Permalink to this headline">¶</a></h2>
 <p>Ultrasound imaging is a widely used practice in medical diagnostics which relies on propagation of sound waves through different tissue. The term “ultrasound” stems from the fact that the sound waves sent through tissue have a frequency ranging between 2.5 and 10 MHz, which is beyond the audible spectrum for humans [1]. The waves that are firstly sent through tissue go through series of reflection and transmission, and are then picked up again to create an imagine of the organ that is of interest.</p>
 <div class="section" id="ultrasound-imaging-and-prenatal-care">
-<h2>Ultrasound imaging and prenatal care<a class="headerlink" href="#ultrasound-imaging-and-prenatal-care" title="Permalink to this headline">¶</a></h2>
+<h3>Ultrasound imaging and prenatal care<a class="headerlink" href="#ultrasound-imaging-and-prenatal-care" title="Permalink to this headline">¶</a></h3>
 <p>Let us now apply everything that we have learnt so far to understand how ultrasound imaging is used in prenatal care. When an ultrasound pulse travels through the body on its way to the fetus, it has to propagate through multiple surfaces, which have different impedance values. For example, once the sound has travelled through skin (its very first barrier), it will be travelling towards the uterine wall. Once it hits the uterine wall, the signal will keep propagating through the amniotic fluid (fluid surrounding the fetus inside of the uterus), potentially also the placenta, and finally, end up reaching the fetus. But how exactly do we end up getting a clear image of the foster without it being ruined by reflections between the uterine wall and the amniotic fluid? This is an interesting problem since we know that we will be getting as much reflection between the uterine wall and amniotic fluid as we would from the amniotic fluid and the fetus. But why exactly does this not interfere with the image that we get at the end of the procedure?</p>
 <p>In order to answer this question, we will need to understand how the signal behaves when it has to go through multiple barriers, such as with uterine wall, amniotic fluid and the fetus. We will exclude the placenta for now to simplify the situation, and will only focus on three boundaries with those being the uterine wall, amniotic fluid and fetus itself.</p>
 <p>Earlier we had only considered the situation involving two barries with two different impedance values - but this is too simple and is not the only case that we get inside of a human body. In order to understand this better, let us visualise the realistic situation including all of the boundaries that we are interested in [2]:</p>
@@ -457,10 +468,6 @@ t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d24ce027c1024b549bfe0cf93e0a417e", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <p><img alt="SegmentLocal" src="../_images/demo_wavepulse.gif" /></p>
 <p>This is what the pulses could potentially look like. One of those pulses is usually comprised of 2-3 sine or cosine cycle of the same frequency. The length of each pulse tells us about the distance that it travels (more about this later). The time between two pulses (as seen above) is used by the tranducer to wait for the pulse to come back after being reflected off from the body. This time is crucial for ultrasound imaging - more of which we will discuss later on  [3].</p>
@@ -468,7 +475,7 @@ t = \frac{E_t}{E_i} = \frac{2n_1}{n_1 + n_2}
 <p>Before we do so, we might need think of what will happen to the wave pulse conceptually, while applying our existing knowledge about impedance, reflection, transmission and behaviour of waves.</p>
 </div>
 <div class="section" id="ultrasound-properties-of-media">
-<h2>Ultrasound properties of media<a class="headerlink" href="#ultrasound-properties-of-media" title="Permalink to this headline">¶</a></h2>
+<h3>Ultrasound properties of media<a class="headerlink" href="#ultrasound-properties-of-media" title="Permalink to this headline">¶</a></h3>
 <p>Let us firstly have a look at different impedance values and understand what they mean [4]:</p>
 <p><img alt="impedance" src="../_images/impedance_values.png" /></p>
 <p>As we can see, the acoustic impedance is given in terms of a decimal number, which makes it easier to compare the different values. Straight away we can notice how great the difference between acoustic impedance of air and for example water is - this indicates a greater reflection coefficient and a smaller transmission coefficient (can you recall the formulas for <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(T\)</span> to see how this makes sense?).</p>
@@ -484,7 +491,7 @@ c = \lambda f
 <p>where <span class="math notranslate nohighlight">\(f\)</span> is the frequency of the wave, <span class="math notranslate nohighlight">\(c\)</span> is the speed and <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength.</p>
 <p>Since we have established that both <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are more or less constant throughout the propagation of the wave pulse, could we somehow use it to extract the neccesary information needed for us to construct the ultrasound images?</p>
 <div class="section" id="guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance">
-<h3>Guiding questions - thinking about the wave pulse and linking it to impedance<a class="headerlink" href="#guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance" title="Permalink to this headline">¶</a></h3>
+<h4>Guiding questions - thinking about the wave pulse and linking it to impedance<a class="headerlink" href="#guiding-questions-thinking-about-the-wave-pulse-and-linking-it-to-impedance" title="Permalink to this headline">¶</a></h4>
 <p><strong>1.</strong> Think about the formula connecting wavelength, frequency and speed of the wave. Which other physical property can you relate the wavelength to? Hint: think about its units.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution to question 1</p>
@@ -509,7 +516,7 @@ c = \lambda f
 </div>
 </div>
 <div class="section" id="propagation-through-the-human-body">
-<h2>Propagation through the human body<a class="headerlink" href="#propagation-through-the-human-body" title="Permalink to this headline">¶</a></h2>
+<h3>Propagation through the human body<a class="headerlink" href="#propagation-through-the-human-body" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
@@ -584,10 +591,6 @@ c = \lambda f
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "233a96ceeaa540eeb36493ac86928d77", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <p><img alt="SegmentLocal" src="../_images/demo_oneboundary.gif" /></p>
 <p>Now that we know how our wave packet would act with one boundary with a certain arbitrary impedance, we can implement more barriers such as skin and uterine wall to observe its behaviour.</p>
@@ -684,10 +687,6 @@ c = \lambda f
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7b06a4e9c063479a95df1de3109f4e27", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <p><img alt="SegmentLocal" src="../_images/demo_twoboundaries.gif" /></p>
 <p>As you were hopefully able to see from the animation above, most of the initial wave packet was able to propagate through the skin and into the uterine wall without being reflected too much - in order to achieve that, ultrasound technicians use a special gel which has impedance value close to that of skin (recall question 3). That way, most of the way is able to propagate through further into the uterine wall and at the end, all the way to the fetus.</p>
@@ -697,13 +696,13 @@ c = \lambda f
 <p>The answers to the question above lies in the fact that wave pulses travel different distances on their way from the transducer down to the fetus - and even though each wave pulse gets reflected equally from each boundary, they do not interfere with each other on their way back to the transducer as they arrive there at different times. This time is crucial to us - it is being used to calculate how far down the pulse travelled (recall the speed, distance and time relationship), which is then used to create a more dimensional image which shows the depth of each boundary that is being examined. This is possible, as we recall, since we assume the speed of sound to be roughly the same though most tissues in the body (excluding some, such as bones for example).</p>
 </div>
 <div class="section" id="potential-computational-essay-ideas">
-<h2>Potential Computational Essay ideas<a class="headerlink" href="#potential-computational-essay-ideas" title="Permalink to this headline">¶</a></h2>
+<h3>Potential Computational Essay ideas<a class="headerlink" href="#potential-computational-essay-ideas" title="Permalink to this headline">¶</a></h3>
 <p>Some of the things that we have not discussed here is attenuation - we have explained how the amplitude of ultrasound wave pulses passing through tissue changes in terms of impedance differences, however, there are other factors that affect it. Attenuation refers to phenomenon that describes how intensity and amplitude of those waves (or wave pulses) changes, while also considering scattering and absorption. For example, one could look into the relationship between absorption of different tissues and attenuation coefficient  - and compare the transmitted pulse to the original pulse after this absorption. Read more about it here [5]!</p>
 <p>Another aspect of ultrasound that we have not discussed is the tranducer and how it sends the wave pulses into the body. For example, we have not really discussed the resolution of those pulses, and what affects that. One of the things that can be explored is the width of the transducer and its relation to the resolution of those wave pulses once sent and received back from the body, specifically in terms of the wave pulses’ frequency. Get inspired by reading more about it here [6]!</p>
 </div>
 </div>
 <div class="section" id="references-and-further-readings">
-<h1>References and further readings<a class="headerlink" href="#references-and-further-readings" title="Permalink to this headline">¶</a></h1>
+<h2>References and further readings<a class="headerlink" href="#references-and-further-readings" title="Permalink to this headline">¶</a></h2>
 <p>* <a class="reference external" href="https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf">https://scholar.harvard.edu/files/schwartz/files/lecture9-impedance.pdf</a></p>
 <p>** <a class="reference external" href="https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage">https://www.uio.no/studier/emner/matnat/fys/FYS2130/v21/forelesningsvideoer/del1_GOOD_zoom_merge.mp4?vrtx=view-as-webpage</a></p>
 <p>*** <a class="reference external" href="https://wiki.seg.org/wiki/Reflection_coefficients_and_transmission_coefficients">https://wiki.seg.org/wiki/Reflection_coefficients_and_transmission_coefficients</a> (explains the difference in signs for <span class="math notranslate nohighlight">\(R\)</span> for pressure waves vs particle velocity waves)</p>
@@ -713,6 +712,7 @@ c = \lambda f
 <p>[4] <a class="reference external" href="https://www.utmb.edu/pedi_ed/adapt/LOs/Regional%20Anesthesia%20Rotation-%20original/page_10.htm">https://www.utmb.edu/pedi_ed/adapt/LOs/Regional Anesthesia Rotation- original/page_10.htm</a></p>
 <p>[5] <a class="reference external" href="https://courses.washington.edu/bioen508/Lecture6-US.pdf">https://courses.washington.edu/bioen508/Lecture6-US.pdf</a></p>
 <p>[6] <a class="reference external" href="https://academic.oup.com/bjaed/article/11/5/186/283004">https://academic.oup.com/bjaed/article/11/5/186/283004</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -738,12 +738,32 @@ c = \lambda f
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="EscapeVelocity.html" title="previous page">Escape Velocity</a>
-    <a class='right-next' id="next-link" href="OberthDemo.html" title="next page">The Oberth Effect</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="EscapeVelocity.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Escape Velocity</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Oberth.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Oberth effect</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

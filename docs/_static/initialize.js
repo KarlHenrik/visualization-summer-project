@@ -6,6 +6,10 @@ function setup() {
         vectors: vectors,
         energy_canvas: energy,
         oberthdemo: oberth,
+        impedanceviz: impedance,
+        superposviz: superpos,
+        braggviz: bragg,
+        fourierviz: fourier,
     };
 
     var myEle;
