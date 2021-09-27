@@ -1,7 +1,5 @@
 let superpos = function(p) {
 
-let time = 0;
-
 let aSlider1;
 let pSlider1;
 let pSlider2;
@@ -18,16 +16,16 @@ p.setup = function() {
   aSlider2 = p.createSlider(20, 60, 40);
   aSlider2.position(0, 480);
 
-  pSlider1 = p.createSlider(100, 300, 150);
+  pSlider1 = p.createSlider(1, 3, 2, 0.05);
   pSlider1.position(195, 460)
 
-  pSlider2 = p.createSlider(100, 300, 150);
+  pSlider2 = p.createSlider(1, 3, 2, 0.05);
   pSlider2.position(195, 480)
 
-  phaseSlider1 = p.createSlider(0, 2*p.PI, 4, 0.01);
+  phaseSlider1 = p.createSlider(0, 2*p.PI, 4, 0.1);
   phaseSlider1.position(390, 460);
 
-  phaseSlider2 = p.createSlider(0, 2*p.PI, 2, 0.01);
+  phaseSlider2 = p.createSlider(0, 2*p.PI, 2, 0.1);
   phaseSlider2.position(390, 480);
 
   wave1 = new Wave(70, 100, 0);
@@ -95,6 +93,7 @@ class Wave {
     this.amplitude = amplitude;
     this.period = period;
     this.phase = phase;
+    this.time = -100
 
     this.y = [];
   }
@@ -102,7 +101,7 @@ class Wave {
   calc(limit) {
     for (let i = 0; i < limit; i++) {
        this.y[i] = this.amplitude * p.sin(this.phase + 
-                         p.TWO_PI * (i - 20 * time) * this.period / 20000 );
+                         p.TWO_PI * (i - this.time) * this.period / 200 );
     }
   }
 
@@ -113,7 +112,10 @@ class Wave {
   }
 
   update() {
-    time += 0.05;
+    this.time += 1;
+    if (this.time * this.period / 200 > 1) {
+      this.time = (this.time * this.period / 200) % 1
+    }
   }
 }
 

@@ -42,6 +42,9 @@ let energy = function(p) {
         p.rect(30, 50, pot, 50);
         p.fill(kinC);
         p.rect(30, 180, kinetic0 - pot, 50);
+        // Zero border
+        p.fill("yellow");
+        p.rect(628, 50, 4, 50);
         // Text
         p.textSize(28);
         p.fill(0, 0, 0);
